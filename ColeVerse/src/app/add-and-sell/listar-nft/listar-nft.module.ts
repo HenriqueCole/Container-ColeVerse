@@ -3,11 +3,28 @@ import { CommonModule } from '@angular/common';
 import { ListaSuaNFTComponent } from './lista-sua-nft/lista-sua-nft.component';
 import { EditarNFTComponent } from './editar-nft/editar-nft.component';
 import { RemoverNFTComponent } from './remover-nft/remover-nft.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: 'editarNFTListada',
+    component: EditarNFTComponent
+  },
+  {
+    path: 'listarNFT',
+    component: ListaSuaNFTComponent
+  },
+  {
+    path: 'removerNftListada',
+    component: RemoverNFTComponent
+  }
+]
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forRoot(routes)
   ],
-  declarations: [ListaSuaNFTComponent, EditarNFTComponent, RemoverNFTComponent]
+  declarations: [EditarNFTComponent, ListaSuaNFTComponent, RemoverNFTComponent]
 })
 export class ListarNFTModule { }

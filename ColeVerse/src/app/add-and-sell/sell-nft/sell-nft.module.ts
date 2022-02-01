@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { VenderNFTComponent } from './vender-nft/vender-nft.component';
-import { EditarNFTComponent } from '../listar-nft/editar-nft/editar-nft.component';
-import { RemoverNFTComponent } from '../listar-nft/remover-nft/remover-nft.component';
+import { EditarNFTdaVendaComponent } from './editar-nftda-venda/editar-nftda-venda.component';
+import { RemoverNFTdaVendaComponent } from './remover-nftda-venda/remover-nftda-venda.component';
 
 const routes: Routes = [
   {
@@ -12,11 +12,11 @@ const routes: Routes = [
   },
   {
     path: 'editarnft',
-    component: EditarNFTComponent
-  }
+    component: EditarNFTdaVendaComponent
+  },
   {
     path: 'removernft',
-    component: RemoverNFTComponent
+    component: RemoverNFTdaVendaComponent
   }
 ]
 
@@ -25,6 +25,6 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  declarations: [VenderNFTComponent, EditarNFTComponent, RemoverNFTComponent]
+  declarations: [VenderNFTComponent, EditarNFTdaVendaComponent, RemoverNFTdaVendaComponent]
 })
 export class SellNFTModule { }
