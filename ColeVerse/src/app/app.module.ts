@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AddAndSellModule } from './add-and-sell/add-and-sell.module';
 import { SellNFTModule } from './add-and-sell/sell-nft/sell-nft.module';
+import { ListarNFTModule } from './add-and-sell/listar-nft/listar-nft.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SellNFTModule } from './add-and-sell/sell-nft/sell-nft.module';
     ]),
     BrowserModule,
     AddAndSellModule,
-    SellNFTModule
+    SellNFTModule,
+    ListarNFTModule
   ],
   providers: [],
   bootstrap: [AppComponent]
