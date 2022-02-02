@@ -3,3 +3,15 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+
+.direita{
+    position: absolute;
+    height: 45px;
+    margin: 135px 0px 0px 971px;
+}
+.left{
+    position: absolute;
+    height: 45px;
+    margin: 135px 0px 0px 1250px;
+}

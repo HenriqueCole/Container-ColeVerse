@@ -61,6 +61,7 @@
 }
 
 .wallet{
+    margin: 45px 0px 0px 0px;
     color: #1868B7;
     font-weight: 700;
     cursor: pointer;
@@ -130,7 +131,7 @@
     border: #d3c5c5 solid 1px;
     height: 50px;
     width: 450px;
-    margin: 78px 0px 0px 100px;
+    margin: 40px 0px 0px 100px;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -249,23 +250,128 @@
     margin: 0px 0px 0px 23px;
 }
 
+.here{
+    margin: 45px 0px 0px 0px;
+}
+
+
 .ContainerLogin{
+    background-color: #e1e1e1;
     display: block;
     justify-content: right;
     align-items: center;
-    margin: 0px 0px 0px 900px;
+    margin: -65px 0px 0px 930px;
+    border: black solid 2px;
+    width: 400px;
+    border-radius: 10px;
+    height: 440px;
+    position: absolute;
 }
 
 .barra{
     background-color: #1868B7;
     padding: 20px;
-    border-radius: 10px;
-    width: 300px;
+    border-radius: 8px;
+    width: 397px;
     font-weight: 600;
-    margin: 0px 199px 0px 0px;
+    margin: -1px 199px 0px 0px;
     align-items: center;
     color: white;
     font-size: 22px;
     display: flex;
     justify-content: center;
+}
+
+.inputs{
+    display: inline-grid;
+    justify-content: center;
+    align-items: center;
+    height: 295px;
+}
+
+.texto{
+    margin: 70px 0px 100px 17px;
+    border: 1px solid rgb(255 255 255);
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    max-width: 100%;
+    outline: 0px;
+    padding: 0px 16px;
+    width: 362px;
+    font-size: 14px;
+    height: 48px;
+    line-height: 21px;
+    transition: 0.5s;
+}
+.texto:hover{
+    border: 1px solid #1868B7;
+}
+
+.senha{
+    margin: -45px 0px 100px 17px;
+    border: 1px solid rgb(255 255 255);
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    max-width: 100%;
+    outline: 0px;
+    padding: 0px 16px;
+    width: 362px;
+    font-size: 14px;
+    height: 48px;
+    line-height: 21px;
+    transition: 0.5s;
+}
+.senha:hover{
+    border: 1px solid #1868B7;
+}
+
+.password{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin: 0px 0px 0px 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin: -210px 0px 0px 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.buttonLogin{
+    margin: -45px 0px 100px 17px;
+    align-items: center;
+    background: rgb(56, 97, 251);
+    border: 0px;
+    border-radius: 8px;
+    display: inline-flex;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    justify-content: center;
+    outline: 0px;
+    font-weight: 600;
+    width: 362px;
+    height: 48px;
+    font-size: 14px;
+    padding: 0px 24px;
+    line-height: 24px;
+    transition: 0.3s;
+}
+
+.buttonLogin:hover{
+    background: rgb(93, 128, 255);
+    border: 1px solid #1868B7;
+}
+
+.direita{
+    position: absolute;
+    height: 45px;
+    margin: 135px 0px 0px 971px;
 }
