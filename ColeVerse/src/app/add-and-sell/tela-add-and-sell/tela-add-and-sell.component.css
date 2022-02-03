@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.containerLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    height: 105px;
+    background-color: #0c0c1b;
+    box-shadow: #36344f 1px 2px 13px 0px;
+}
+
+.cole{
+    font-family: fantasy;
+    color: #e1bfff;
+}
+.verse{
+    font-family: fantasy;
+    color: #7d7da9;
+}
+
+.whatToDo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 70px 0px 0px 0px;
+    font-size: 40px;
+    font-weight: 600;
+    color: #505093;
+}
+
+.containerButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 150px 0px 0px 0px;
+    column-gap: 120px;
+}
+
+.list{
+    border: none;
+    height: 60px;
+    width: 310px;
+    background-color: #2d2534;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.list:hover{
+    background-color: #4a3f53;
+    box-shadow: #686161 0px 1px 15px 5px;
+}
+
+.sell{
+    border: none;
+    height: 60px;
+    width: 310px;
+    background-color: #2d2534;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.sell:hover{
+    background-color: #4a3f53;
+    box-shadow: #686161 0px 1px 15px 5px;
+}
+
+.voltar{
+    margin: 210px 0px 0px 20px;
+    border: none;
+    height: 50px;
+    width: 90px;
+    background-color: #d91919;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.voltar:hover{
+    background-color: #ff0000;
+}

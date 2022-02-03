@@ -13,10 +13,13 @@ export class LoginComponent implements OnInit {
   ) {
 }
 
-  username = '';
-  password = '';
 
   ngOnInit() {
   }
 
+  goToAddSell(){
+    this.router.navigate(["/telaAddAndSell"])
+  }
+
 }
+
