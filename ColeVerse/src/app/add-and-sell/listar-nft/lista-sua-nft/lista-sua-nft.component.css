@@ -38,3 +38,12 @@
 .voltarAddAndSell:hover{
     background-color: #ff0000;
 }
+
+h2{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    margin: 35px 0px 0px 0px;
+    color: #505093;
+}

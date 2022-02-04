@@ -6,6 +6,24 @@ import { LoginComponent } from './login/login.component';
 import { AddAndSellModule } from './add-and-sell/add-and-sell.module';
 import { SellNFTModule } from './add-and-sell/sell-nft/sell-nft.module';
 import { ListarNFTModule } from './add-and-sell/listar-nft/listar-nft.module';
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider
+} from "angular-6-social-login-v2";
+
+export function getAuthServiceConfigs() {
+  let config = new AuthServiceConfig(
+      [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider("137398670366-t26i90c6re4qg5rnjugbiojqegidccjp.apps.googleusercontent.com")
+        }
+      ]
+  );
+  return config;
+}
+
 
 @NgModule({
   declarations: [
@@ -15,17 +33,22 @@ import { ListarNFTModule } from './add-and-sell/listar-nft/listar-nft.module';
   imports: [
     RouterModule.forRoot([
       {path: '', component: LoginComponent, canActivate: [
-        
       ]},
     ]),
     BrowserModule,
     AddAndSellModule,
     SellNFTModule,
-    ListarNFTModule
+    ListarNFTModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [{
+    provide: AuthServiceConfig,
+    useFactory: getAuthServiceConfigs
+  }
+  ],
   bootstrap: [AppComponent]
 
+  
 
 })
 export class AppModule { }
