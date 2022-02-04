@@ -261,11 +261,11 @@
     display: block;
     justify-content: right;
     align-items: center;
-    margin: -65px 0px 0px 930px;
+    margin: -110px 0px 0px 960px;
     border: black solid 2px;
     width: 400px;
     border-radius: 10px;
-    height: 440px;
+    height: 500px   ;
     position: absolute;
 }
 
@@ -347,7 +347,7 @@
 }
 
 .buttonLogin{
-    margin: -45px 0px 100px 17px;
+    margin: -45px 0px 0px 17px;
     align-items: center;
     background: rgb(56, 97, 251);
     border: 0px;
@@ -365,8 +365,45 @@
     line-height: 24px;
     transition: 0.3s;
 }
-
 .buttonLogin:hover{
     background: rgb(93, 128, 255);
     border: 1px solid #1868B7;
+}
+
+.google{
+    margin: 15px 0px 0px 70px;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    border: 0px;
+    border-radius: 8px;
+    display: inline-flex;
+    color: #6A6A6A;
+    cursor: pointer;
+    justify-content: center;
+    outline: 0px;
+    font-weight: 600;
+    width: 250px;
+    height: 48px;
+    font-size: 14px;
+    padding: 0px 24px;
+    line-height: 24px;
+    transition: 0.3s;
+    box-shadow: rgb(66, 64, 64) 2px 4px 4px -4px;
+}
+.google:hover{
+    box-shadow: rgb(71, 66, 66) 4px 5px 8px -3px;
+}
+
+.or{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px 0px 0px;
+    font-size: 17px;
+    color: #8b6d6d;
+}
+
+.googleIMG{
+    position: absolute;
+    margin: 16px 0px 0px -245px;
 }
