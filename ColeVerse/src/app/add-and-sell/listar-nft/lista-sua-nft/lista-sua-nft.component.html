@@ -6,10 +6,10 @@
   
   <h2>Listing an NFT</h2>
   
+  <input *ngIf="teste != 1" type="file" (change)="mostrarImagem($event)">
+  <img *ngIf="teste == 1" [src]="imageURL" alt="">
   
   
-  
-  
-  
+  <br />
   <button class="voltarAddAndSell" (click)="router.navigate(['/telaAddAndSell'])">Back</button>
 </html>

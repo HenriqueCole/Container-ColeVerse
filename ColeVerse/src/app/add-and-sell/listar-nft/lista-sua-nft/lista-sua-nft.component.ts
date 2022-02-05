@@ -1,3 +1,4 @@
+import { ReadVarExpr } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -13,4 +14,15 @@ export class ListaSuaNFTComponent implements OnInit {
   ngOnInit() {
   }
 
+  imageURL 
+  teste
+
+  mostrarImagem(event){
+    const file = new FileReader
+    file.onload = (e) => {
+      this.imageURL = e.target.result
+    }
+    this.teste =1 
+    file.readAsDataURL(event.target.files[0])
+  }
 }
