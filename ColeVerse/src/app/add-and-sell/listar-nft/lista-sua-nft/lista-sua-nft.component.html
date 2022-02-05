@@ -6,9 +6,14 @@
   
   <h2>Listing an NFT</h2>
   
-  <input *ngIf="teste != 1" type="file" (change)="mostrarImagem($event)">
-  <img *ngIf="teste == 1" [src]="imageURL" alt="">
   
+  <img *ngIf="teste == 1" [src]="imageURL" alt="">
+  <form action="">
+    <div>
+      <label *ngIf="teste != 1" for="arquivo">Choose</label>
+      <input type="file" name="arquivo" id="arquivo" (change)="mostrarImagem($event)">
+    </div>
+  </form>
   
   <br />
   <button class="voltarAddAndSell" (click)="router.navigate(['/telaAddAndSell'])">Back</button>

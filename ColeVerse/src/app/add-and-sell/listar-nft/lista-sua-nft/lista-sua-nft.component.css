@@ -52,3 +52,27 @@ img{
     height: 350px;
     width: 380px;
 }
+
+input[type="file"]{
+    display: none;
+}
+
+label{
+    padding: 20px 10px;
+    width: 200px;
+    background: #1868B7;
+    color: #fff;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+label:hover{
+    box-shadow: #8585c3 2px -1px 6px -1px;
+    background: #4088cf;
+}
