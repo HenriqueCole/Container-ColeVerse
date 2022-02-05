@@ -7,9 +7,12 @@
 </div>
 
 <h2 class="Listing">Save your NFT</h2>
+<div class="containerButtonSave">
+  <i class="fas fa-download"></i>
+  <button (click)="abrirModal()" class="savingNFT">Save</button>
+</div>
 
-
-<div class="containerModal">
+<div *ngIf="openModal == 1" class="containerModal">
   <div class="modal">
     <div class="inputs">
       <h2 class="itemName">Item name</h2>

@@ -16,6 +16,7 @@ export class ListaSuaNFTComponent implements OnInit {
 
   imageURL 
   teste
+  openModal
 
   mostrarImagem(event){
     const file = new FileReader
@@ -24,6 +25,10 @@ export class ListaSuaNFTComponent implements OnInit {
     }
     this.teste = 1
     file.readAsDataURL(event.target.files[0])
+  }
+
+  abrirModal(){
+    this.openModal = 1
   }
 
   

@@ -87,7 +87,18 @@ label:hover{
     margin: 20px 0px 0px 0px;
     display: flex;
     justify-content: center;
+    animation: go-back 0.6s;
 }
+
+@keyframes go-back {
+    from {
+      transform: translateX(200px);
+    }
+    to {
+      transform: translateX(0px);
+    }
+  } 
+
 
 .modal{
     background-color: black;
@@ -180,3 +191,22 @@ label:hover{
     background: #8ecc3c;
 }
 
+.savingNFT{
+    margin: 0px 0px 0px 15px;
+    border: none;
+    height: 40px;
+    width: 120px;
+    background: #505093;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.fa-download{
+    position: absolute;
+    color: white;
+    margin: 10px 0px 0px 25px;
+}
