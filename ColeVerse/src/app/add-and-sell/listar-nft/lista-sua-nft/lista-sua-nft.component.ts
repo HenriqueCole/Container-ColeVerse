@@ -30,6 +30,5 @@ export class ListaSuaNFTComponent implements OnInit {
   abrirModal(){
     this.openModal = 1
   }
-
   
 }
