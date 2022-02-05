@@ -1,19 +1,32 @@
 <html>
-  <div class="containerLogo">
-    <div class="cole">Cole</div>
-    <div class="verse">Verse</div>
+<div class="containerLogo">
+  <div class="cole">Cole</div>
+  <div class="verse">Verse</div>
+</div>
+
+<h2>Listing an NFT</h2>
+
+<div class="modal">
+  <div class="inputs">
+    <input type="text" class="name" placeholder="Name">
+    <br />
+    <input type="text" class="price" placeholder="Price">
   </div>
-  
-  <h2>Listing an NFT</h2>
-  
-  
+  <div class="containerUpload">
   <img *ngIf="teste == 1" [src]="imageURL" alt="">
   <form action="">
     <div>
-      <label *ngIf="teste != 1" for="arquivo">Choose</label>
+      <label *ngIf="teste != 1" for="arquivo">Upload NFT</label>
       <input type="file" name="arquivo" id="arquivo" (change)="mostrarImagem($event)">
     </div>
   </form>
-  <br />
-  <button class="voltarAddAndSell" (click)="router.navigate(['/telaAddAndSell'])">Back</button>
+</div>
+</div>
+
+
+
+
+<br />
+<button class="voltarAddAndSell" (click)="router.navigate(['/telaAddAndSell'])">Back</button>
+
 </html>

@@ -22,7 +22,9 @@ export class ListaSuaNFTComponent implements OnInit {
     file.onload = (e) => {
       this.imageURL = e.target.result
     }
-    this.teste =1 
+    this.teste = 1
     file.readAsDataURL(event.target.files[0])
   }
+
+  
 }

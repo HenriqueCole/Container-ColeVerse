@@ -49,8 +49,9 @@ h2{
 }
 
 img{
-    height: 350px;
-    width: 380px;
+    height: 361px;
+    width: 361px;
+    border-radius: 6px;
 }
 
 input[type="file"]{
@@ -75,4 +76,63 @@ label{
 label:hover{
     box-shadow: #8585c3 2px -1px 6px -1px;
     background: #4088cf;
+}
+
+.inputs{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    border: black solid 2px;
+    width: 365px;
+    height: 517px;
+    border-radius: 10px;
+}
+
+.containerUpload{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 28px 0px 0px 0px;
+}
+
+.name{
+    margin: 10px 0px 0px 0px;
+    border: 1px solid #b1a3a3;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    max-width: 100%;
+    outline: 0px;
+    padding: 0px 16px;
+    width: 330px;
+    font-size: 14px;
+    height: 48px;
+    line-height: 21px;
+    transition: 0.5s;
+}
+.name:hover{
+    background-color: #ebdede;
+    border: 1px solid #c59898;
+}
+
+.price{
+    border: 1px solid #b1a3a3;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    max-width: 100%;
+    outline: 0px;
+    padding: 0px 16px;
+    width: 330px;
+    font-size: 14px;
+    height: 48px;
+    line-height: 21px;
+    transition: 0.5s;
+}
+.price:hover{
+    background-color: #ebdede;
+    border: 1px solid #c59898;
 }
