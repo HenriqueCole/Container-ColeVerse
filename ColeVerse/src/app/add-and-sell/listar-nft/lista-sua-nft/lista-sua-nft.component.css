@@ -39,7 +39,7 @@
     background-color: #ff0000;
 }
 
-h2{
+.Listing{
     justify-content: center;
     display: flex;
     align-items: center;
@@ -61,7 +61,7 @@ input[type="file"]{
 label{
     padding: 20px 10px;
     width: 200px;
-    background: #1868B7;
+    background: #090b0c;
     color: #fff;
     text-transform: uppercase;
     display: block;
@@ -74,8 +74,7 @@ label{
 }
 
 label:hover{
-    box-shadow: #8585c3 2px -1px 6px -1px;
-    background: #4088cf;
+    background: #171c1f;
 }
 
 .inputs{
@@ -84,10 +83,17 @@ label:hover{
     align-items: center;
 }
 
+.containerModal{
+    margin: 20px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+}
+
 .modal{
+    background-color: black;
     border: black solid 2px;
-    width: 365px;
-    height: 517px;
+    width: 400px;
+    height: 640px;
     border-radius: 10px;
 }
 
@@ -99,40 +105,78 @@ label:hover{
 }
 
 .name{
-    margin: 10px 0px 0px 0px;
-    border: 1px solid #b1a3a3;
+    background-color: #192633;
+    margin: 5px 0px 0px 0px;
+    border: 1px solid #000000;
     border-radius: 8px;
     box-sizing: border-box;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     max-width: 100%;
     outline: 0px;
     padding: 0px 16px;
     width: 330px;
-    font-size: 14px;
+    font-size: 20px;
     height: 48px;
     line-height: 21px;
     transition: 0.5s;
 }
 .name:hover{
-    background-color: #ebdede;
-    border: 1px solid #c59898;
+    background-color: #24313f;
+    border: 1px solid #221515;
 }
 
 .price{
-    border: 1px solid #b1a3a3;
+    background-color: #192633;
+    margin: 10px 0px 0px 0px;
+    border: 1px solid #000000;
     border-radius: 8px;
     box-sizing: border-box;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     max-width: 100%;
     outline: 0px;
     padding: 0px 16px;
     width: 330px;
-    font-size: 14px;
+    font-size: 20px;
     height: 48px;
     line-height: 21px;
     transition: 0.5s;
 }
 .price:hover{
-    background-color: #ebdede;
-    border: 1px solid #c59898;
+    background-color: #24313f;
+    border: 1px solid #221515;
 }
+
+.itemName{
+    color: white;
+    font-size: 14px;
+    margin: 8px 0px 0px 6px;
+}
+.itemPrice{
+    color: white;
+    font-size: 14px;
+    margin: 8px 0px 0px 6px;
+}
+
+.fa-image{
+    color: white;
+    position: absolute;
+    margin: 20px 0px 0px 15px;
+}
+
+.sendNFT{
+    margin: 15px 0px 0px 130px;
+    border: none;
+    height: 40px;
+    width: 120px;
+    background: #7ab926;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+.sendNFT:hover{
+    background: #8ecc3c;
+}
+

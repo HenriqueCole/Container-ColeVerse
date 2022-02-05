@@ -1,32 +1,40 @@
 <html>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+  integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 <div class="containerLogo">
   <div class="cole">Cole</div>
   <div class="verse">Verse</div>
 </div>
 
-<h2>Listing an NFT</h2>
+<h2 class="Listing">Save your NFT</h2>
 
-<div class="modal">
-  <div class="inputs">
-    <input type="text" class="name" placeholder="Name">
-    <br />
-    <input type="text" class="price" placeholder="Price">
-  </div>
-  <div class="containerUpload">
-  <img *ngIf="teste == 1" [src]="imageURL" alt="">
-  <form action="">
-    <div>
-      <label *ngIf="teste != 1" for="arquivo">Upload NFT</label>
-      <input type="file" name="arquivo" id="arquivo" (change)="mostrarImagem($event)">
+
+<div class="containerModal">
+  <div class="modal">
+    <div class="inputs">
+      <h2 class="itemName">Item name</h2>
+      <input type="text" class="name">
+      <br />
+      <h2 class="itemPrice">Price</h2>
+      <input type="text" class="price">
     </div>
-  </form>
+    <div class="containerUpload">
+      <img *ngIf="teste == 1" [src]="imageURL" alt="">
+      <form action="">
+        <div>
+          <i *ngIf="teste != 1" class="fas fa-image"></i>
+          <label *ngIf="teste != 1" for="arquivo">Upload NFT</label>
+          <input type="file" name="arquivo" id="arquivo" (change)="mostrarImagem($event)">
+        </div>
+      </form>
+      <br />
+    </div>
+    <button *ngIf="teste == 1" class="sendNFT">Send</button>
+  </div>
 </div>
-</div>
 
 
-
-
-<br />
-<button class="voltarAddAndSell" (click)="router.navigate(['/telaAddAndSell'])">Back</button>
+<!-- <br />
+<button class="voltarAddAndSell" (click)="router.navigate(['/telaAddAndSell'])">Back</button> -->
 
 </html>
