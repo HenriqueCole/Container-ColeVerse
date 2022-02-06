@@ -1,6 +1,7 @@
-import { ReadVarExpr } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+var lista = document.querySelector('ul')
+
 
 @Component({
   selector: 'app-lista-sua-nft',
@@ -8,11 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./lista-sua-nft.component.css']
 })
 export class ListaSuaNFTComponent implements OnInit {
-
+  
   constructor(private router: Router) { }
-
+  
+  
   ngOnInit() {
   }
+  
 
   imageURL 
   teste
@@ -21,12 +24,20 @@ export class ListaSuaNFTComponent implements OnInit {
   mostrarImagem(event){
     const file = new FileReader
     file.onload = (e) => {
-      this.imageURL = e.target.result
+      this.imageURL = e.target.result;
+      var item = document.createElement('li');
+      var image = document.createElement('img');
+      image.src = this.imageURL;
+      console.log(item)
+      item.appendChild(image);
+      lista.appendChild(item);
     }
     this.teste = 1
     file.readAsDataURL(event.target.files[0])
   }
 
+
+  
   abrirModal(){
     this.openModal = 1
   }

@@ -14,6 +14,7 @@
 
 <div  *ngIf="openModal == 1" class="containerModal">
   <div class="modal">
+
     <div class="inputs">
       <h2 class="itemName">Item name</h2>
       <input type="text" class="name">
@@ -21,6 +22,7 @@
       <h2 class="itemPrice">Price</h2>
       <input type="text" class="price">
     </div>
+    
     <div class="containerUpload">
       <img *ngIf="teste == 1" [src]="imageURL" alt="">
       <form action="">
@@ -32,9 +34,15 @@
       </form>
       <br />
     </div>
+
     <button *ngIf="teste == 1" class="sendNFT">Save</button>
   </div>
 </div>
+
+<div class="SavedNFT">
+  
+</div>
+
 
 
 <!-- <br />
