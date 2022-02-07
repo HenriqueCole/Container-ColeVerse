@@ -12,7 +12,7 @@
   <button (click)="abrirModal()" class="savingNFT">Save</button>
 </div>
 
-<div  *ngIf="openModal == 1" class="containerModal">
+<div  *ngIf="openModal == 1" id="containerModal">
   <div class="modal">
 
     <div class="inputs">
@@ -27,7 +27,7 @@
       <img *ngIf="teste == 1" [src]="imageURL" alt="">
       <form action="">
         <div>
-          <i *ngIf="teste != 1" class="fas fa-image"></i>
+          <i *ngIf="teste == 0999999" class="fas fa-image"></i>
           <label *ngIf="teste != 1" for="arquivo">Upload NFT</label>
           <input type="file" name="arquivo" id="arquivo" (change)="mostrarImagem($event)">
         </div>
@@ -35,11 +35,11 @@
       <br />
     </div>
 
-    <button *ngIf="teste == 1" class="sendNFT">Save</button>
+    <button *ngIf="teste == 1" class="sendNFT" (click)="clickBotao()">Save</button>
   </div>
 </div>
 
-<div class="SavedNFT">
+<div id="SavedNFT">
   
 </div>
 
