@@ -41,7 +41,7 @@ export class ListaSuaNFTComponent implements OnInit {
     console.log(item)
     item.appendChild(image);
     document.getElementById("SavedNFT").appendChild(item);
-    image.className = 'imagemSalva'
+    image.id = 'imagemSalva'
 
 
 

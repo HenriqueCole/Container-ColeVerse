@@ -10,8 +10,9 @@ database(`CREATE TABLE IF NOT EXISTS TESTE (
 
 database(`CREATE TABLE IF NOT EXISTS USER (
     ID INTEGER PRIMARY KEY AUTOINCREMENT,
-    NAME varchar(30),
-    NICKNAME varchar(30)
+    NOME varchar(30),
+    NICKNAME varchar(30),
+    PASSWORD varchar(30)
     )`).then(result => {
     console.log('TABELA USER CRIADA! BOA MANO');
 }).catch(erro => {
