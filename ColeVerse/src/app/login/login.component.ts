@@ -48,27 +48,27 @@ public socialSignIn(socialPlatform : string) {
   }
 
   goToAddSell(){
-    // this.router.navigate(["/telaAddAndSell"])
-//     fetch('/api/',
-//     {  
-//         method: 'POST',
-//         body: JSON.stringify(
-//             {
-//                 nickname: this.username, password: this.password
-//             }
-//         ), 
-//         headers: {
-//             'Content-Type': 'application/json'
-//         }
-//     }
-// ).then(function (result) {
-//     return result.json();
-// }).then(function (dados){
-//     console.log(dados);
-//     alert('login efetuado')
-// }).catch(function(erro) {
-//     console.log(erro);
-// })
+    this.router.navigate(["/telaAddAndSell"])
+    fetch('/api/',
+    {  
+        method: 'POST',
+        body: JSON.stringify(
+            {
+                nickname: this.username, password: this.password
+            }
+        ), 
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+).then(function (result) {
+    return result.json();
+}).then(function (dados){
+    console.log(dados);
+    alert('login efetuado')
+}).catch(function(erro) {
+    console.log(erro);
+})
   }
 
 }
