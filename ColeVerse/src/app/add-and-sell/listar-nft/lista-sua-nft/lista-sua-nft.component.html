@@ -24,12 +24,15 @@
     </div>
     
     <div class="containerUpload">
-      <img *ngIf="teste == 1" [src]="imageURL" alt="">
+      <img *ngIf="teste == 1" [src]="imageURL" id="imgNFT" alt="">
       <form action="">
         <div>
           <i *ngIf="teste == 0999999" class="fas fa-image"></i>
+
           <label *ngIf="teste != 1" for="arquivo">Upload NFT</label>
-          <input type="file" name="arquivo" id="arquivo" (change)="mostrarImagem($event)">
+
+          <input  type="file" name="arquivo" id="arquivo" (change)="mostrarImagem($event)">
+
         </div>
       </form>
       <br />
@@ -40,7 +43,7 @@
 </div>
 
 <div id="SavedNFT">
-  
+
 </div>
 
 

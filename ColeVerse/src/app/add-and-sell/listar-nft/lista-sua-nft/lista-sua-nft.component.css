@@ -218,3 +218,13 @@ label:hover{
     color: white;
     margin: 10px 0px 0px 25px;
 }
+
+#SavedNFT{
+    display: flex;
+    column-gap: 0px;
+    min-width: 100vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    column-gap: 20px;
+}
