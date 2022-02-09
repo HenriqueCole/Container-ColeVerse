@@ -17,17 +17,13 @@ export class ListaSuaNFTComponent implements OnInit {
   
 
   imageURL 
-  teste
+  teste = 0;
   openModal
 
   mostrarImagem(event){
     const file = new FileReader
     file.onload = (e) => {
       this.imageURL = e.target.result;
-      setTimeout(( )=>{
-        document.querySelector('#imgNFT').remove()
-        this.imageURL = ""
-      }, 3000)
     }
     this.teste = 1
     file.readAsDataURL(event.target.files[0])
@@ -36,9 +32,14 @@ export class ListaSuaNFTComponent implements OnInit {
 
   abrirModal(){
     this.openModal = 1
+    this.teste = 0;
   }
 
+ preco: String = "";
+ nome: String = "";
+
   clickBotao(){
+    this.teste == 0;
     var containerIMG = document.createElement('div')
     var item = document.createElement('li');
     var image = document.createElement('img');
@@ -49,7 +50,6 @@ export class ListaSuaNFTComponent implements OnInit {
     document.getElementById("SavedNFT").appendChild(containerIMG);
     image.id = 'imagemSalva'
     this.openModal = 2;
-
     image.style.height = '350px';
     image.style.width = '350px';
     containerIMG.id = 'containerIMG'
@@ -57,6 +57,15 @@ export class ListaSuaNFTComponent implements OnInit {
     containerIMG.style.display = 'flex';
     containerIMG.style.justifyContent = 'center';
     containerIMG.style.alignItems = 'center';
+    containerIMG.style.margin = '15px 0px 0px 0px';
+
+    var name = document.querySelector('.name')
+    var price = document.querySelector('.price')
+    
+
+
+    console.log(this.nome , this.preco)
+  
   }
 
   

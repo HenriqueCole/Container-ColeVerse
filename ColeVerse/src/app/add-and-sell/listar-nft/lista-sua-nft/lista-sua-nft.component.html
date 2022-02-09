@@ -16,22 +16,22 @@
   <div class="modal">
 
     <div class="inputs">
-      <h2 class="itemName">Item name</h2>
+      <h2 class="itemName" >Item name</h2>
       <input type="text" class="name">
       <br />
-      <h2 class="itemPrice">Price</h2>
+      <h2 class="itemPrice" >Price</h2>
       <input type="text" class="price">
     </div>
     
     <div class="containerUpload">
-      <img *ngIf="teste == 1" [src]="imageURL" id="imgNFT" alt="">
+      <img *ngIf="teste == 1" [src]="imageURL" alt="">
       <form action="">
         <div>
           <i *ngIf="teste == 0999999" class="fas fa-image"></i>
 
-          <label *ngIf="teste != 1" for="arquivo">Upload NFT</label>
+          <label *ngIf="teste == 0" for="arquivo">Upload NFT</label>
 
-          <input  type="file" name="arquivo" id="arquivo" (change)="mostrarImagem($event)">
+          <input *ngIf="teste !=1" type="file" name="arquivo" id="arquivo" (change)="mostrarImagem($event)">
 
         </div>
       </form>
