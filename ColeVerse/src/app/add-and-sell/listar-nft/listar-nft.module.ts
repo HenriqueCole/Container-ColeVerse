@@ -4,6 +4,7 @@ import { ListaSuaNFTComponent } from './lista-sua-nft/lista-sua-nft.component';
 import { EditarNFTComponent } from './editar-nft/editar-nft.component';
 import { RemoverNFTComponent } from './remover-nft/remover-nft.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -23,7 +24,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
   declarations: [EditarNFTComponent, ListaSuaNFTComponent, RemoverNFTComponent]
 })

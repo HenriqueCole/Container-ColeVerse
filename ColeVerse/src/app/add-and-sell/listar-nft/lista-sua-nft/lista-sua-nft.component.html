@@ -17,10 +17,10 @@
 
     <div class="inputs">
       <h2 class="itemName" >Item name</h2>
-      <input type="text" class="name">
+      <input [(ngModel)]="name" type="text" class="name">
       <br />
       <h2 class="itemPrice" >Price</h2>
-      <input type="text" class="price">
+      <input [(ngModel)]="price" type="text" class="price">
     </div>
     
     <div class="containerUpload">
@@ -43,7 +43,8 @@
 </div>
 
 <div id="SavedNFT">
-
+  {{name}}
+  {{price}}
 </div>
 
 

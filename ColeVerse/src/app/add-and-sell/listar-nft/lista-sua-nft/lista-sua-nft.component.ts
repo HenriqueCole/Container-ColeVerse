@@ -8,19 +8,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./lista-sua-nft.component.css']
 })
 export class ListaSuaNFTComponent implements OnInit {
-  
-  constructor(private router: Router) { }
-  
-  
+
+  constructor(
+    private router: Router
+
+  ) { }
+
+
   ngOnInit() {
   }
-  
 
-  imageURL 
+
+  imageURL
   teste = 0;
   openModal
 
-  mostrarImagem(event){
+  mostrarImagem(event) {
     const file = new FileReader
     file.onload = (e) => {
       this.imageURL = e.target.result;
@@ -30,15 +33,15 @@ export class ListaSuaNFTComponent implements OnInit {
   }
 
 
-  abrirModal(){
+  abrirModal() {
     this.openModal = 1
     this.teste = 0;
   }
 
- preco: String = "";
- nome: String = "";
+  preco: String = "";
+  nome: String = "";
 
-  clickBotao(){
+  clickBotao() {
     this.teste == 0;
     var containerIMG = document.createElement('div')
     var item = document.createElement('li');
@@ -61,12 +64,12 @@ export class ListaSuaNFTComponent implements OnInit {
 
     var name = document.querySelector('.name')
     var price = document.querySelector('.price')
-    
 
 
-    console.log(this.nome , this.preco)
-  
+
+    console.log(this.nome, this.preco)
+
   }
-
-  
+  name: "";
+  price: "";
 }
