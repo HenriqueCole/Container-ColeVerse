@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
+body{
+    background-color: #0f0f0f;
+    background-image: linear-gradient(315deg, #111213 0%, #151516 74%);
+    height: 730px;
+}
+
 *{
     font-family: 'Poppins', sans-serif;
 }
@@ -7,19 +15,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 50px;
-    height: 105px;
+    font-size: 40px;
+    height: 80px;
     background-color: #0c0c1b;
     box-shadow: #36344f 1px 2px 13px 0px;
 }
 
 .cole{
     font-family: fantasy;
-    color: #e1bfff;
+    color: #7122FA;
 }
 .verse{
     font-family: fantasy;
-    color: #7d7da9;
+    color: #9b62ff;
 }
 
 .whatToDo{
@@ -29,7 +37,7 @@
     margin: 70px 0px 0px 0px;
     font-size: 40px;
     font-weight: 600;
-    color: #505093;
+    color: #7122FA;
 }
 
 .containerButtons{
@@ -44,49 +52,58 @@
     border: none;
     height: 60px;
     width: 310px;
-    background-color: #2d2534;
+    background-color: #7122FA;
     font-size: 18px;
     font-weight: 600;
     border-radius: 10px;
     color: white;
-    transition: 0.3s;
     cursor: pointer;
+    background-image: linear-gradient(#f3322b , #f3322b );
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position-x: right;
+    transition: background-size 500ms;
 }
 .list:hover{
-    background-color: #4a3f53;
-    box-shadow: #686161 0px 1px 15px 5px;
+    background-size: 100% 100%;
+    background-position-x: left;
 }
 
 .sell{
     border: none;
     height: 60px;
     width: 310px;
-    background-color: #2d2534;
+    background-color: #7122FA;
     font-size: 18px;
     font-weight: 600;
     border-radius: 10px;
     color: white;
-    transition: 0.3s;
     cursor: pointer;
+    background-image: linear-gradient(#f3322b , #f3322b );
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position-x: right;
+    transition: background-size 500ms;
 }
 .sell:hover{
-    background-color: #4a3f53;
-    box-shadow: #686161 0px 1px 15px 5px;
+    background-size: 100% 100%;
+    background-position-x: left;
 }
 
 .voltar{
-    margin: 210px 0px 0px 20px;
+    position: absolute;
     border: none;
-    height: 50px;
-    width: 90px;
+    margin: 12px 0px 0px 10px;
+    height: 30px;
+    width: 95px;
     background-color: #d91919;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
-    border-radius: 10px;
+    border-radius: 6px;
     color: white;
     transition: 0.3s;
     cursor: pointer;
 }
-.voltar:hover{
+.voltarAddAndSell:hover{
     background-color: #ff0000;
 }

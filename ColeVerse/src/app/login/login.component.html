@@ -1,66 +1,70 @@
-<div class="containerLogo">
-    <div class="cole">Cole</div>
-    <div class="verse">Verse</div>
-</div>
-
-<div class="first">You'd need to login with an Ethereum wallet to buy NFTs.</div>
-<div class="container">
-    <div class="second">But here in ColeVerse everything is</div>
-    <div class="easy">EASY!</div>
-</div>
-
-<div class="ContainerLogin">
-        <div class="barra">Log in</div>
-    <div class="inputs">
-        <div class="password">Password</div>
-        <div class="user">User</div>
-        <input class="texto" type="text">
-        <input class="senha" type="password">
+<body>
+    <div class="containerLogo">
+        <div class="cole">Cole</div>
+        <div class="verse">Verse</div>
     </div>
-    <button class="buttonLogin" (click)=goToAddSell()>Log In</button>
-    <div class="or">______  or  ______</div>
-    <div class="containerGoogle">
-        <button class="google" (click)="socialSignIn()">Sign In with Google</button>
-        <img class="googleIMG" src="https://accounts.scdn.co/sso/images/google-icon.1cdc8fce9609d07f0e9d8d0bc4b61f8f.svg" alt="">
+
+    <div class="first">You'd need to login with an Ethereum wallet to buy NFTs.</div>
+    <div class="container">
+        <div class="second">But here in ColeVerse everything is</div>
+        <div class="easy">EASY!</div>
     </div>
-</div>
 
-<div class="container2">
-    <div class="here">Here're some kinds of </div>
-    <div class="wallet">wallets </div>
-    <div class="here">that you'd need to login with</div>
-</div>
+    <div class="ContainerLogin">
+        <div class="card">
+            <div class="barra">Log in</div>
+            <div class="inputs">
+                <div class="password">Password</div>
+                <div class="user">User</div>
+                <input class="texto" type="text">
+                <input class="senha" type="password">
+            </div>
+            <button class="buttonLogin" (click)=goToAddSell()>Log In</button>
+            <div class="or">______ or ______</div>
+            <div class="containerGoogle">
+                <button class="google" (click)="socialSignIn()">Sign In with Google</button>
+                <img class="googleIMG"
+                    src="https://accounts.scdn.co/sso/images/google-icon.1cdc8fce9609d07f0e9d8d0bc4b61f8f.svg" alt="">
+            </div>
+        </div>
+    </div>
 
-<div class="cubeMeta">
-    <img class="meta"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/1200px-MetaMask_Fox.svg.png">
-    <div class="metamask">MetaMask</div>
-</div>
+    <div class="container2">
+        <div class="here">Here're some kinds of </div>
+        <div class="wallet">wallets </div>
+        <div class="here">that you'd need to login with</div>
+    </div>
 
-<div class="cubeCoin">
-    <img class="coin"
-        src="data:image/png;base64,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">
-    <div class="coinbase">CoinBase</div>
-</div>
+    <div class="cubeMeta">
+        <img class="meta"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/1200px-MetaMask_Fox.svg.png">
+        <div class="metamask">MetaMask</div>
+    </div>
 
-<div class="cubeWallet">
-    <img class="walletC" src="https://cdn-images-1.medium.com/max/1200/1*wFWwTEBQzTwsGIms4NTeww.png">
-    <div class="walletconnect">WalletConnect</div>
-</div>
+    <div class="cubeCoin">
+        <img class="coin" src="https://bitcoin-trading.io/wp-content/uploads/2021/08/coinbase-logo.png">
+        <div class="coinbase">CoinBase</div>
+    </div>
 
-<div class="cubeFortmatic">
-    <img class="fort"
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADgCAMAAADCMfHtAAAAb1BMVEVhe/////9adf9ScP/v8v/4+v+yv/91jP9eef+ruP/CzP9ifP9adv/7/P/O1v/h5v96kP9uhv9Vcv/q7f++x//U3P9pgv9Jaf+4xP/Fz/+0wP/u8f+Nn/+erf9lf/+hsP+Pof+mtf+Emf+XqP/b4P9T6D97AAACe0lEQVR4nO3d23LaMBRGYSzHsAHFJw5NA3EC6fs/Y5spbUlikVbTCu3dte7/Md8Y21eGycR2bnrtT/CvQ6g/hPpDqD+E+kOoP4T6Q6g/hPpDqD+E+kOoP4T6Q6g/hPpDqD+E+kOoP4T6Q6g/hPpDqD+E+kOoP4T6Q6g/hPpDeKG+VNGneTRwVenoNlZY3hRKQogw/xAizD+ECPMPIcL8Q4gw/xAizD+ECPMPIcL8Q4gw/xAizD+ECPMPIcL8Q4gw/xAizD+ECPMPIcL8Q4gw/xAizL/kwrqbpay7Sy5c9JKyPvqtoHihiz1kVPHvPSFEmCqE4RAiTBXCcAgRpgphOIQIU4UwHEKEqUIYDiHCVCEMhxBhqhCGQ4gwVQjDIUSYKoThECJMFcJwCBGmCmE4hAhThTAcQoSpuoaw/5uAD7uC8LNfRjWoEcY2jft2KxLOEf63wnvzwgVC7cJ+Y13oGuvCYWVcKLOddeG+Mi70D3r+lSxSuNbzLneccKiNC2XWWBfuFf3iQJTQza0Ly8a4ULaFcaF7tC6UxrjQ72+MC2Vd2Ba+PO5tC18ehsaFlXGhOxS2hdLtjAv9vLAtlLYyLvT1j6FRoXv6ObQplHZlXDjUv4Ymhf3hbGhR6I/nQ4NCOa7Oh/aEsm1eDc0JRTavh9aEMqzfDI0JRd4CjQlluXk3NCWU9j3QlNC1zcjQjlAmz9XY0IzQb9e3o0MjQulnXwJDG0Lf3Y+fwMKGUOR57BZzSr9QyrYevcWcUi4UvzzWl4eqheK2j3XwAjylVijiy+Gu+cinVCjipDseLtxezlIm/HbmXO9nx8PiN87e91QJh659ephumt2fHPwrvnpwxSDtoCgAAAAASUVORK5CYII=">
-    <div class="fortmatic">Fortmatic</div>
-</div>
+    <div class="cubeWallet">
+        <img class="walletC" src="https://api.nuget.org/v3-flatcontainer/walletconnect.desktop/1.6.1/icon">
+        <div class="walletconnect">WalletConnect</div>
+    </div>
 
-<div class="cubeTrust">
-    <img class="trust"
-        src="https://play-lh.googleusercontent.com/-3uTwEsZDk2NEgRblDEfIIY7T-xAZfJPN5JzVKz7s94Ds8KrKCrSVHvkEuneJlUBekc">
-    <div class="trustwallet">Trust</div>
-</div>
+    <div class="cubeFortmatic">
+        <img class="fort"
+            src="https://i1.wp.com/www.cryptojobsdaily.com/wp-content/uploads/2021/05/fortmatic.png?fit=256%2C256&ssl=1">
+        <div class="fortmatic">Fortmatic</div>
+    </div>
 
-<div class="cubeBitski">
-    <img class="bit" src="https://avatars.githubusercontent.com/u/36717558?s=280&v=4">
-    <div class="bitski">Bitski</div>
-</div>
+    <div class="cubeTrust">
+        <img class="trust" src="https://moeda.casa/logos/large/twt.png">
+        <div class="trustwallet">Trust</div>
+    </div>
+
+    <div class="cubeBitski">
+        <img class="bit" src="https://avatars.githubusercontent.com/u/36717558?s=280&v=4">
+        <div class="bitski">Bitski</div>
+    </div>
+    <footer></footer>
+</body>

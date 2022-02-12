@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-lista-sua-nft',
@@ -46,7 +46,6 @@ export class ListaSuaNFTComponent implements OnInit {
 
   clickBotao() {
     this.teste == 0;
-    var containerIMG = document.createElement('div')
     var item = document.createElement('li');
     var image = document.createElement('img');
     image.src = this.imageURL;
@@ -58,11 +57,30 @@ export class ListaSuaNFTComponent implements OnInit {
     image.style.height = '350px';
     image.style.width = '350px';
     image.style.margin = '-137px 0px 0px 0px';
-    containerIMG.id = 'containerIMG'
 
-    console.log(this.nome, this.preco)
-    this.saidaDosInputs = 1;
+    setTimeout(() => {
+      this.saidaDosInputs = 1;
     this.salvarDados.push({name: this.name, price: this.price, imageURL: this.imageURL})
+    }, 1000);
+
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      icon: 'success',
+      title: 'Your NFT has been saved'
+    })
+    
+
   }
 
   salvarDados = []

@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Beastly&display=swap');
 
+body{
+    background-color: #0f0f0f;
+    background-image: linear-gradient(315deg, #111213 0%, #151516 74%);
+    height: 730px;
+}
 
 *{
     font-family: 'Poppins', sans-serif;
@@ -10,19 +15,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 50px;
-    height: 105px;
+    font-size: 40px;
+    height: 80px;
     background-color: #0c0c1b;
     box-shadow: #36344f 1px 2px 13px 0px;
 }
 
 .cole{
     font-family: fantasy;
-    color: #e1bfff;
+    color: #7122FA;
 }
 .verse{
     font-family: fantasy;
-    color: #7d7da9;
+    color: #9b62ff;
 }
 
 .first{
@@ -30,7 +35,7 @@
     margin: 75px 0px 0px 15px;
     font-weight: 700;
     font-size: 23px;
-    color: #04111D;
+    color: white;
 }
 
 .container{
@@ -41,13 +46,14 @@
     margin: 15px 0px 0px 8px;
     font-weight: bold;
     font-size: 20px;
-    color: #1868B7;
+    color: #7122FA;
 }
 
 .second{
     margin: 15px 0px 0px 120px;
     font-size: 20px;
     font-weight: 500;
+    color: white;
 }
 
 .container2{
@@ -63,7 +69,7 @@
 
 .wallet{
     margin: 45px 0px 0px 0px;
-    color: #1868B7;
+    color: #7122FA;
     font-weight: 700;
     cursor: pointer;
 }
@@ -108,14 +114,14 @@
 }
 
 .coin{
-    height: 40px;
-    margin: 0px 0px 0px 15px;
+    height: 51px;
+    margin: 0px 0px 0px 1px;
 }
 
 .coinbase{
     font-size: 16px;
     font-weight: bold;
-    margin: 0px 0px 0px 20px;
+    margin: 0px 0px 0px 7px;
 }
 .walletC{
     height: 48px;
@@ -129,7 +135,7 @@
 }
 
 .cubeMeta{
-    border: #d3c5c5 solid 1px;
+    border: #3f3b3b solid 1px;
     height: 50px;
     width: 450px;
     margin: 40px 0px 0px 100px;
@@ -138,13 +144,14 @@
     align-items: center;
     transition: 0.3s;
     cursor: pointer;
+    color: white;
 }
 .cubeMeta:hover{
-    box-shadow: #c1b2b2 0px 0px 6px 3px;
+    box-shadow: #7122fa 0px 0px 8px -1px;
 }
 
 .cubeCoin{
-    border: #d3c5c5 solid 1px;
+    border: #3f3b3b solid 1px;
     height: 50px;
     width: 450px;
     margin: 5px 0px 0px 100px;
@@ -153,13 +160,14 @@
     align-items: center;
     transition: 0.3s;
     cursor: pointer;
+    color: white;
 }
 .cubeCoin:hover{
-    box-shadow: #c1b2b2 0px 0px 6px 3px;
+    box-shadow: #7122fa 0px 0px 8px -1px;
 }
 
 .cubeWallet{
-    border: #d3c5c5 solid 1px;
+    border: #3f3b3b solid 1px;
     height: 50px;
     width: 450px;
     margin: 5px 0px 0px 100px;
@@ -168,13 +176,14 @@
     align-items: center;
     transition: 0.3s;
     cursor: pointer;
+    color: white;
 }
 .cubeWallet:hover{
-    box-shadow: #c1b2b2 0px 0px 6px 3px;
+    box-shadow: #7122fa 0px 0px 8px -1px;
 }
 
 .cubeFortmatic{
-    border: #d3c5c5 solid 1px;
+    border: #3f3b3b solid 1px;
     height: 50px;
     width: 450px;
     margin: 5px 0px 0px 100px;
@@ -183,9 +192,10 @@
     align-items: center;
     transition: 0.3s;
     cursor: pointer;
+    color: white;
 }
 .cubeFortmatic:hover{
-    box-shadow: #c1b2b2 0px 0px 6px 3px;
+    box-shadow: #7122fa 0px 0px 8px -1px;
 }
 
 .fort{
@@ -200,7 +210,7 @@
 }
 
 .cubeTrust{
-    border: #d3c5c5 solid 1px;
+    border: #3f3b3b solid 1px;
     height: 50px;
     width: 450px;
     margin: 5px 0px 0px 100px;
@@ -209,9 +219,10 @@
     align-items: center;
     transition: 0.3s;
     cursor: pointer;
+    color: white;
 }
 .cubeTrust:hover{
-    box-shadow: #c1b2b2 0px 0px 6px 3px;
+    box-shadow: #7122fa 0px 0px 8px -1px;
 }
 
 .trust{
@@ -226,7 +237,7 @@
 }
 
 .cubeBitski{
-    border: #d3c5c5 solid 1px;
+    border: #3f3b3b solid 1px;
     height: 50px;
     width: 450px;
     margin: 5px 0px 0px 100px;
@@ -235,9 +246,10 @@
     align-items: center;
     transition: 0.3s;
     cursor: pointer;
+    color: white;
 }
 .cubeBitski:hover{
-    box-shadow: #c1b2b2 0px 0px 6px 3px;
+    box-shadow: #7122fa 0px 0px 8px -1px;
 }
 
 .bit{
@@ -257,20 +269,32 @@
 
 
 .ContainerLogin{
-    background-color: #e1e1e1;
     display: block;
     justify-content: right;
     align-items: center;
-    margin: -110px 0px 0px 960px;
-    border: black solid 2px;
+    margin: -88px 0px 0px 960px;
+    border: #211c1c solid 2px;
     width: 400px;
     border-radius: 10px;
-    height: 500px   ;
+    height: 500px;
     position: absolute;
 }
 
+.card{
+    --x-pos: 0;
+    --y-angle: calc(var(--x-pos) * 5deg);
+
+    --y-pos: 0;
+    --x-angle: calc(var(--y-pos) * 5deg);
+
+    transform:
+    perspetive(200px)
+    rotateY(var(--y-angle))
+    rotateX(var(--x-angle));
+}
+
 .barra{
-    background-color: #1868B7;
+    background-color: #7122FA;
     padding: 20px;
     border-radius: 8px;
     width: 398px;
@@ -291,11 +315,12 @@
 }
 
 .texto{
+    background-color: #140f0f;
     margin: 70px 0px 100px 17px;
-    border: 1px solid rgb(255 255 255);
     border-radius: 8px;
     box-sizing: border-box;
-    color: rgb(0, 0, 0);
+    color: rgb(255 255 255);
+    border: #251b1b solid 1px;
     max-width: 100%;
     outline: 0px;
     padding: 0px 16px;
@@ -306,15 +331,16 @@
     transition: 0.5s;
 }
 .texto:hover{
-    border: 1px solid #1868B7;
+    border: 1px solid #7122FA;
 }
 
 .senha{
+    background-color: #140f0f;
     margin: -45px 0px 100px 17px;
-    border: 1px solid rgb(255 255 255);
+    border: #251b1b solid 1px;
     border-radius: 8px;
     box-sizing: border-box;
-    color: rgb(0, 0, 0);
+    color: rgb(255 255 255);
     max-width: 100%;
     outline: 0px;
     padding: 0px 16px;
@@ -325,7 +351,7 @@
     transition: 0.5s;
 }
 .senha:hover{
-    border: 1px solid #1868B7;
+    border: 1px solid #7122FA;
 }
 
 .password{
@@ -333,8 +359,9 @@
     align-items: center;
     position: absolute;
     margin: 0px 0px 0px 20px;
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 19px;
+    font-weight: 100;
+    color: #9b62ff;
 }
 
 .user{
@@ -342,14 +369,15 @@
     align-items: center;
     position: absolute;
     margin: -210px 0px 0px 20px;
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 19px;
+    font-weight: 100;
+    color: #9b62ff;
 }
 
 .buttonLogin{
     margin: -45px 0px 0px 17px;
     align-items: center;
-    background: rgb(56, 97, 251);
+    background: #7122FA;
     border: 0px;
     border-radius: 8px;
     display: inline-flex;
@@ -366,8 +394,7 @@
     transition: 0.3s;
 }
 .buttonLogin:hover{
-    background: rgb(93, 128, 255);
-    border: 1px solid #1868B7;
+    background: #8741ff;
 }
 
 .google{

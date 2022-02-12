@@ -1,12 +1,24 @@
-<div class="containerLogo">
-  <div class="cole">Cole</div>
-  <div class="verse">Verse</div>
-</div>
-
-<div class="whatToDo">What do you want to do?</div>
-
-<div class="containerButtons">
-<button class="list" (click)="router.navigate(['/listarNFT'])">Save NFT</button>
-<button class="sell" (click)="router.navigate(['/vendernft'])">Sell NFT</button>
-</div>
-<button class="voltar" (click)="router.navigate(['/'])">Back</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <button class="voltar" (click)="logOut()">
+      LOG OUT
+    </button>
+    <div class="containerLogo">
+      <div class="cole">Cole</div>
+      <div class="verse">Verse</div>
+    </div>
+  
+    <div class="whatToDo">What do you want to do?</div>
+  
+    <div class="containerButtons">
+      <button class="list" (click)="router.navigate(['/listarNFT'])">Save NFT</button>
+      <button class="sell" (click)="router.navigate(['/vendernft'])">Sell NFT</button>
+    </div>
+</body>
+</html>

@@ -1,7 +1,14 @@
-<html>
+<body>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
   integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-<div class="containerLogo">
+
+  <button class="voltarAddAndSell" (click)="router.navigate(['/telaAddAndSell'])">
+    BACK
+  </button>
+
+
+  <div class="containerLogo">
+
   <div class="cole">Cole</div>
   <div class="verse">Verse</div>
 </div>
@@ -24,10 +31,10 @@
     </div>
     
     <div class="containerUpload">
-      <img *ngIf="teste == 1" [src]="imageURL" alt="">
+      <img *ngIf="teste == 1" [src]="imageURL" alt="" style="margin:-15px 0px 0px 0px">
       <form action="">
         <div>
-          <i *ngIf="teste == 0999999" class="fas fa-image"></i>
+          <i *ngIf="teste != 1" class="fas fa-image"></i>
 
           <label *ngIf="teste == 0" for="arquivo">Upload NFT</label>
 
@@ -55,10 +62,4 @@
     </div>
   </div>
 </div>
-
-
-
-<br />
-<button class="voltarAddAndSell" (click)="router.navigate(['/telaAddAndSell'])">Back</button>
-
-</html>
+</body>
