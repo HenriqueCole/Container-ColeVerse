@@ -52,6 +52,7 @@ img{
     height: 361px;
     width: 361px;
     border-radius: 6px;
+    margin: -64px 0px 0px 0px;
 }
 
 input[type="file"]{
@@ -223,7 +224,6 @@ label:hover{
     display: flex;
     column-gap: 0px;
     min-width: 100vw;
-    flex-wrap: wrap;
     justify-content: center;
     list-style: none;
     column-gap: 20px;
@@ -232,7 +232,7 @@ label:hover{
 .container{
     display: flex;
     justify-content: center;
-    margin: 0px 0px 15px 0px;
+    margin: 0px 0px 15px 10px;
     align-items: center;
     border: 2px solid #e3e3e3;
     height: 427px;
@@ -246,7 +246,13 @@ label:hover{
 
 .dadosInputs{
     position: absolute;
-    bottom: 30px;
+    bottom: 9px;
     left: 3%;
     font-size: 20px;
+}
+
+.ladoALado{
+    display: flex;
+    Flex-wrap: wrap;
+    margin: 20px 0px 0px 23px;
 }

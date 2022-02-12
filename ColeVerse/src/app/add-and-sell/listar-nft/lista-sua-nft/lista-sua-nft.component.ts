@@ -51,9 +51,6 @@ export class ListaSuaNFTComponent implements OnInit {
     var image = document.createElement('img');
     image.src = this.imageURL;
     console.log(item)
-    // containerIMG.appendChild(image);
-    // item.appendChild(containerIMG)
-    // document.getElementById("SavedNFT").appendChild(containerIMG);
     image.id = 'imagemSalva'
     this.openModal = 2;
     

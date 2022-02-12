@@ -44,6 +44,7 @@
 
 <div id="SavedNFT">
   <div *ngIf="saidaDosInputs == 1" class="saidaInputs">
+    <div class="ladoALado">
       <div *ngFor="let person of salvarDados, let i = index" class="container">
         <img [src]="person.imageURL" alt="">
         <div class="dadosInputs">
@@ -51,12 +52,13 @@
         <p> Price: {{ person.price }}</p>
       </div>
       </div>
+    </div>
   </div>
 </div>
 
 
 
-<!-- <br />
-<button class="voltarAddAndSell" (click)="router.navigate(['/telaAddAndSell'])">Back</button> -->
+<br />
+<button class="voltarAddAndSell" (click)="router.navigate(['/telaAddAndSell'])">Back</button>
 
 </html>
