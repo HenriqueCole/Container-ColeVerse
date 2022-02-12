@@ -228,3 +228,25 @@ label:hover{
     list-style: none;
     column-gap: 20px;
 }
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 15px 0px;
+    align-items: center;
+    border: 2px solid #e3e3e3;
+    height: 427px;
+    border-radius: 17px;
+    position: relative;
+}
+.container:hover{
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.2);
+    transform: translateY(-6px);
+}
+
+.dadosInputs{
+    position: absolute;
+    bottom: 30px;
+    left: 3%;
+    font-size: 20px;
+}

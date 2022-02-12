@@ -36,10 +36,13 @@ export class ListaSuaNFTComponent implements OnInit {
   abrirModal() {
     this.openModal = 1
     this.teste = 0;
+    this.name = ""
+    this.price = ""
   }
 
   preco: String = "";
   nome: String = "";
+  saidaDosInputs = 0;
 
   clickBotao() {
     this.teste == 0;
@@ -48,28 +51,25 @@ export class ListaSuaNFTComponent implements OnInit {
     var image = document.createElement('img');
     image.src = this.imageURL;
     console.log(item)
-    containerIMG.appendChild(image);
-    item.appendChild(containerIMG)
-    document.getElementById("SavedNFT").appendChild(containerIMG);
+    // containerIMG.appendChild(image);
+    // item.appendChild(containerIMG)
+    // document.getElementById("SavedNFT").appendChild(containerIMG);
     image.id = 'imagemSalva'
     this.openModal = 2;
+    
+    
     image.style.height = '350px';
     image.style.width = '350px';
+    image.style.margin = '-137px 0px 0px 0px';
     containerIMG.id = 'containerIMG'
-    containerIMG.style.backgroundColor = 'blue';
-    containerIMG.style.display = 'flex';
-    containerIMG.style.justifyContent = 'center';
-    containerIMG.style.alignItems = 'center';
-    containerIMG.style.margin = '15px 0px 0px 0px';
-
-    var name = document.querySelector('.name')
-    var price = document.querySelector('.price')
-
-
 
     console.log(this.nome, this.preco)
-
+    this.saidaDosInputs = 1;
+    this.salvarDados.push({name: this.name, price: this.price, imageURL: this.imageURL})
   }
-  name: "";
-  price: "";
+
+  salvarDados = []
+
+  name = "";
+  price = "";
 }

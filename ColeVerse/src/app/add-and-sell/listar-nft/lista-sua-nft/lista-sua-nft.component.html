@@ -43,8 +43,15 @@
 </div>
 
 <div id="SavedNFT">
-  {{name}}
-  {{price}}
+  <div *ngIf="saidaDosInputs == 1" class="saidaInputs">
+      <div *ngFor="let person of salvarDados, let i = index" class="container">
+        <img [src]="person.imageURL" alt="">
+        <div class="dadosInputs">
+        <p> Name: {{ person.name }}</p>
+        <p> Price: {{ person.price }}</p>
+      </div>
+      </div>
+  </div>
 </div>
 
 
