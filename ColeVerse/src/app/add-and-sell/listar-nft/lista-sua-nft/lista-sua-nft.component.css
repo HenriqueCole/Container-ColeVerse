@@ -100,15 +100,17 @@ label:hover{
 .inputs{
     display: grid;
     align-items: center;
-    margin: 0px 0px 0px 37px;
+    margin: 16px 0px 0px 40px;
 }
 
 #containerModal{
-    margin: -98px 0px 0px 0px;
+    margin: 2px 0px 0px 2px;
     display: flex;
     justify-content: center;
     -webkit-animation: go-back 0.6s;
     animation: go-back 1s;
+    height: 369px;
+    width: 788px;
 }
 
 @keyframes go-back {
@@ -122,16 +124,62 @@ label:hover{
 
 .modal{
     background-image: repeating-linear-gradient( -45deg, #181313 0px, #000000 20px, #000000 20px, #0e0e12 40px );
-    border: black solid 2px;
-    width: 827px;
+    width: 829px;
     height: 360px;
     border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.containerRodar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rodar{
+    width: 792px;
+    height: 365px;
+    margin: 0px 0px 0px 400px;
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+    border-radius: 15px;
+}
+.rodar::before{
+    content: "";
+    margin: 160px 0px 0px -124px;
+    background-image: conic-gradient(#7122FA 20deg, transparent 120deg);
+    width: 1100px;
+    height: 105px;
+    position: absolute;
+    -webkit-animation: rotate 2s linear infinite;
+    animation: rotate 2s linear infinite;
+}
+.rodar::after{
+    content: "";
+    background-image: repeating-linear-gradient( -45deg, #181313 0px, #000000 20px, #000000 20px, #0e0e12 40px );
+    width: 99%;
+    height: 99%;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    position: absolute;
+    margin: 2px 0px 0px 4px;
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-370deg);
+    }
 }
 
 .containerUpload{
     display: flex;
     align-items: center;
-    margin: 80px 0px 0px 100px;
+    margin: 65px 0px 0px 100px;
 }
 
 .name{

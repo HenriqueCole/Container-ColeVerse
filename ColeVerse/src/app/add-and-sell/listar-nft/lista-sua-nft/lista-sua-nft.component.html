@@ -18,8 +18,8 @@
   <i class="fas fa-download"></i>
   <button (click)="abrirModal()" class="savingNFT">Save</button>
 </div>
-
-<div  *ngIf="openModal == 1" id="containerModal">
+<div *ngIf="openModal == 1" class="rodar">
+<div   id="containerModal">
   <div class="modal">
 
     <div class="inputs">
@@ -31,7 +31,7 @@
     </div>
     
     <div class="containerUpload">
-      <img *ngIf="teste == 1" [src]="imageURL" alt="" style="margin: -252px 0px 0px 370px">
+      <img *ngIf="teste == 1" [src]="imageURL" alt="" style="margin: -258px 0px 0px 309px">
       <form action="">
         <div>
           <i *ngIf="teste != 1" class="fas fa-image"></i>
@@ -48,7 +48,7 @@
     <button *ngIf="teste == 1" class="sendNFT" (click)="clickBotao()">Save</button>
   </div>
 </div>
-
+</div>
 <div id="SavedNFT">
   <div *ngIf="saidaDosInputs == 1" class="saidaInputs">
     <div class="ladoALado">
