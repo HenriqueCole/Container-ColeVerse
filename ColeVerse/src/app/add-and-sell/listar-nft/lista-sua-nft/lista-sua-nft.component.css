@@ -58,7 +58,9 @@ body{
     align-items: center;
     font-size: 40px;
     margin: 35px 0px 0px 0px;
-    color: #7122FA;
+    background: -webkit-linear-gradient(#7122FA, #a977ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 img{
@@ -97,8 +99,8 @@ label:hover{
 
 .inputs{
     display: grid;
-    justify-content: center;
     align-items: center;
+    margin: 0px 0px 0px 37px;
 }
 
 #containerModal{
@@ -121,16 +123,15 @@ label:hover{
 .modal{
     background-image: repeating-linear-gradient( -45deg, #181313 0px, #000000 20px, #000000 20px, #0e0e12 40px );
     border: black solid 2px;
-    width: 400px;
-    height: 596px;
+    width: 827px;
+    height: 360px;
     border-radius: 10px;
 }
 
 .containerUpload{
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 28px 0px 0px 0px;
+    margin: 80px 0px 0px 100px;
 }
 
 .name{
@@ -183,7 +184,7 @@ label:hover{
 }
 .itemPrice{
     color: white;
-    margin: -15px 0px 0px 134px;
+    margin: 0px 0px 0px 134px;
     font-size: 20px;
 }
 
@@ -194,7 +195,7 @@ label:hover{
 }
 
 .sendNFT{
-    margin: 10px 0px 0px 135px;
+    margin: -46px 0px 0px 140px;
     border: none;
     height: 40px;
     width: 120px;
@@ -205,6 +206,7 @@ label:hover{
     border-radius: 10px;
     font-weight: 700;
     transition: 0.2s;
+    position: absolute;
 }
 .sendNFT:hover{
     background: #8ecc3c;

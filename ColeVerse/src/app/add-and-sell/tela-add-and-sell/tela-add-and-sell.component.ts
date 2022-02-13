@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2/dist/sweetalert2.js'
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-tela-add-and-sell',

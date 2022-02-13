@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+:root {
+    --clr-neon: hsl(317 100% 54%);
+    --clr-bg: hsl(323 21% 16%);
+  }
 
 body{
     background-color: #0f0f0f;
@@ -37,7 +41,9 @@ body{
     margin: 70px 0px 0px 0px;
     font-size: 40px;
     font-weight: 600;
-    color: #7122FA;
+    background: -webkit-linear-gradient(#7122FA, #a977ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .containerButtons{
@@ -51,14 +57,14 @@ body{
 .list{
     border: none;
     height: 60px;
-    width: 310px;
+    width: 200px;
     background-color: #7122FA;
     font-size: 18px;
     font-weight: 600;
     border-radius: 10px;
     color: white;
     cursor: pointer;
-    background-image: linear-gradient(#f3322b , #f3322b );
+    background-image: linear-gradient(#9151ff , #9151ff );
     background-repeat: no-repeat;
     background-size: 0% 100%;
     background-position-x: right;
@@ -72,14 +78,14 @@ body{
 .sell{
     border: none;
     height: 60px;
-    width: 310px;
+    width: 200px;
     background-color: #7122FA;
     font-size: 18px;
     font-weight: 600;
     border-radius: 10px;
     color: white;
     cursor: pointer;
-    background-image: linear-gradient(#f3322b , #f3322b );
+    background-image: linear-gradient(#9151ff , #9151ff );
     background-repeat: no-repeat;
     background-size: 0% 100%;
     background-position-x: right;
@@ -106,4 +112,74 @@ body{
 }
 .voltarAddAndSell:hover{
     background-color: #ff0000;
+}
+
+.containerNeon{
+    display: flex;
+    justify-content: center;
+}
+
+.list{
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    border: #7122FA 0.125em solid;
+    border-radius: 0.25em;
+    box-shadow: inset 0 0 0.5em 0 #7122FA, 0 0 0.5em 0 #7122FA;
+    position: relative;
+}
+
+.list::before{
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: #7122FA;
+    top: 110%;
+    left: 48px;
+    width: 50%;
+    height: 50%;
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+}
+.list:hover::before,
+.list:focus::before {
+  opacity: 1;
+}
+.list:hover::after,
+.list:focus::after {
+  opacity: 1;
+}
+
+
+.sell{
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    border: #7122FA 0.125em solid;
+    border-radius: 0.25em;
+    box-shadow: inset 0 0 0.5em 0 #7122FA, 0 0 0.5em 0 #7122FA;
+    position: relative;
+}
+
+.sell::before{
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: #7122FA;
+    top: 110%;
+    left: 48px;
+    width: 50%;
+    height: 50%;
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+}
+.sell:hover::before,
+.sell:focus::before {
+  opacity: 1;
+}
+.sell:hover::after,
+.sell:focus::after {
+  opacity: 1;
 }
