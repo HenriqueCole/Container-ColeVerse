@@ -1,65 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
 <body>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-  integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-
-  <button class="voltarAddAndSell" (click)="router.navigate(['/telaAddAndSell'])">
-    BACK
-  </button>
-
-
-  <div class="containerLogo">
-
-  <div class="cole">Cole</div>
-  <div class="verse">Verse</div>
-</div>
-
-<h2 class="Listing">Save your NFT</h2>
-<div class="containerButtonSave">
-  <i class="fas fa-download"></i>
-  <button (click)="abrirModal()" class="savingNFT">Save</button>
-</div>
-<div *ngIf="openModal == 1" class="rodar">
-<div   id="containerModal">
-  <div class="modal">
-
-    <div class="inputs">
-      <h2 class="itemName" >Item name</h2>
-      <input [(ngModel)]="name" type="text" class="name">
-      <br />
-      <h2 class="itemPrice" >Price</h2>
-      <input [(ngModel)]="price" type="text" class="price">
-    </div>
     
-    <div class="containerUpload">
-      <img *ngIf="teste == 1" [src]="imageURL" alt="" style="margin: -258px 0px 0px 309px">
-      <form action="">
-        <div>
-          <i *ngIf="teste != 1" class="fas fa-image"></i>
-
-          <label *ngIf="teste == 0" for="arquivo">Upload NFT</label>
-
-          <input *ngIf="teste !=1" type="file" name="arquivo" id="arquivo" (change)="mostrarImagem($event)">
-
+  
+    <button class="voltarAddAndSell" (click)="router.navigate(['/telaAddAndSell'])">
+      BACK
+    </button>
+  
+  
+    <div class="containerLogo">
+    <div class="cole">Cole</div>
+    <div class="verse">Verse</div>
+  </div>
+  
+  <h2 class="Listing">Save your NFT</h2>
+  <div class="containerButtonSave">
+    <i class="fas fa-download"></i>
+    <button (click)="abrirModal()" class="savingNFT">Save</button>
+  </div>
+  <div *ngIf="openModal == 1" class="rodar">
+  <div   id="containerModal">
+    <div class="modal">
+  
+      <div class="inputs">
+        <h2 class="itemName" >Item name</h2>
+        <input [(ngModel)]="name" type="text" class="name">
+        <br />
+        <h2 class="itemPrice" >Price</h2>
+        <input [(ngModel)]="price" type="text" class="price">
+      </div>
+      
+      <div class="containerUpload">
+        <img *ngIf="teste == 1" [src]="imageURL" alt="" style="margin: -258px 0px 0px 309px">
+        <form action="">
+          <div>
+            <i *ngIf="teste != 1" class="fas fa-image"></i>
+  
+            <label *ngIf="teste == 0" for="arquivo">Upload NFT</label>
+  
+            <input *ngIf="teste !=1" type="file" name="arquivo" id="arquivo" (change)="mostrarImagem($event)">
+  
+          </div>
+        </form>
+        <br />
+      </div>
+  
+      <button *ngIf="teste == 1" class="sendNFT" (click)="clickBotao()">Save</button>
+    </div>
+  </div>
+  </div>
+  <div id="SavedNFT">
+    <div *ngIf="saidaDosInputs == 1" class="saidaInputs">
+      <div class="ladoALado">
+        <div *ngFor="let person of salvarDados, let i = index" (click)="hoverMouse()" class="container">
+          <img [src]="person.imageURL" alt="">
+          <div class="dadosInputs">
+          <p> Name: {{ person.name }}</p>
+          <p> Price: {{ person.price }}</p>
+          <!-- <i class="fa-solid fa-check"></i> -->
         </div>
-      </form>
-      <br />
-    </div>
-
-    <button *ngIf="teste == 1" class="sendNFT" (click)="clickBotao()">Save</button>
-  </div>
-</div>
-</div>
-<div id="SavedNFT">
-  <div *ngIf="saidaDosInputs == 1" class="saidaInputs">
-    <div class="ladoALado">
-      <div *ngFor="let person of salvarDados, let i = index" class="container">
-        <img [src]="person.imageURL" alt="">
-        <div class="dadosInputs">
-        <p> Name: {{ person.name }}</p>
-        <p> Price: {{ person.price }}</p>
-      </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </body>
+</html>

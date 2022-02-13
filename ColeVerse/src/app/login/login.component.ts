@@ -29,8 +29,6 @@ export class LoginComponent implements OnInit {
     this.socialAuthService.signIn(socialPlatformProvider).then(
       (userData) => {
         console.log(socialPlatform + " sign in data : ", userData);
-        // Now sign-in with userData
-        // ...
         this.goToAddSell()
       }
     );

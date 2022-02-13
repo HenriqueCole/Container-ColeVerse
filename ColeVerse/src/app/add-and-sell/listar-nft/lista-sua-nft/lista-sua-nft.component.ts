@@ -87,4 +87,6 @@ export class ListaSuaNFTComponent implements OnInit {
 
   name = "";
   price = "";
+
+
 }
