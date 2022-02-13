@@ -66,6 +66,9 @@
           <p> Price: {{ person.price }}</p>
           <!-- <i class="fa-solid fa-check"></i> -->
         </div>
+        <div class="containerButtonEdit">
+          <button [(ngModel)]="editButton" (click)="editNFT()" class="editButton">⁝</button>
+        </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2'
+var containerNFT = document.getElementsByClassName('container');
+
 
 @Component({
   selector: 'app-lista-sua-nft',
@@ -61,13 +63,13 @@ export class ListaSuaNFTComponent implements OnInit {
     setTimeout(() => {
       this.saidaDosInputs = 1;
     this.salvarDados.push({name: this.name, price: this.price, imageURL: this.imageURL})
-    }, 1000);
+    }, 0);
 
     const Toast = Swal.mixin({
       toast: true,
       position: 'top-end',
       showConfirmButton: false,
-      timer: 3000,
+      timer: 1300,
       timerProgressBar: true,
       didOpen: (toast) => {
         toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -88,5 +90,44 @@ export class ListaSuaNFTComponent implements OnInit {
   name = "";
   price = "";
 
+  editNFT(){
+    Swal.fire({
+      title: 'Configuration of your NFT',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Edit',
+      denyButtonText: `Remove`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        let timerInterval
+    Swal.fire({
+      title: 'redirecting',
+      timer: 1000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading()
+        const b = Swal.getHtmlContainer().querySelector('b')
+        timerInterval = setInterval(() => {
+          b.textContent = Swal.getTimerLeft()
+        }, 100)
+      },
+      willClose: () => {
+        clearInterval(timerInterval)
+      }
+    }).then((result) => {
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log('I was closed by the timer')
+      }
+    })
+        setTimeout(() => {
+          this.router.navigate(['/editarNFTListada']);
+        }, 1000);
+        
+      } else if (result.isDenied) {
+        Swal.fire('NFT removed!', '', 'success')
+      }
+    })
+    
+  }
 
 }
