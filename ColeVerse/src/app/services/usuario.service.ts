@@ -12,13 +12,13 @@ export class UsuarioService {
     return new Promise((resolvido , rejeitado) =>{
 
 
-      fetch('/api/buscar_usuario', {
+      fetch('/api/login', {
         method: 'POST', 
         headers: {
           'Content-type': 'aplication/jason'
         }
       }).then(resultado => resultado.json())
-      .then(resolvido)
+      .then(result => resolvido(result))
       .catch(rejeitado);
     })
   }

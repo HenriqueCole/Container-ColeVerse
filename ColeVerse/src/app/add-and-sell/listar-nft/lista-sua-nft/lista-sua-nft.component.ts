@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2/src/sweetalert2.js'
+import Swal from 'sweetalert2/src/sweetalert2.js';
 var containerNFT = document.getElementsByClassName('container');
 
 
@@ -101,7 +101,7 @@ export class ListaSuaNFTComponent implements OnInit {
       if (result.isConfirmed) {
         let timerInterval
     Swal.fire({
-      title: 'redirecting',
+      title: 'Redirecting...',
       timer: 1000,
       timerProgressBar: true,
       didOpen: () => {

@@ -4,7 +4,7 @@
 body{
     background-color: #0f0f0f;
     background-image: linear-gradient(315deg, #111213 0%, #151516 74%);
-    height: 730px;
+    height: 757px;
 }
 
 *{
@@ -326,7 +326,7 @@ body{
     outline: 0px;
     padding: 0px 16px;
     width: 362px;
-    font-size: 14px;
+    font-size: 18px;
     height: 48px;
     line-height: 21px;
     transition: 0.5s;
@@ -346,7 +346,7 @@ body{
     outline: 0px;
     padding: 0px 16px;
     width: 362px;
-    font-size: 14px;
+    font-size: 18px;
     height: 48px;
     line-height: 21px;
     transition: 0.5s;

@@ -11,6 +11,7 @@ import {
   AuthServiceConfig,
   GoogleLoginProvider
 } from "angular-6-social-login-v2";
+import { FormsModule } from '@angular/forms';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -39,7 +40,8 @@ export function getAuthServiceConfigs() {
     AddAndSellModule,
     SellNFTModule,
     ListarNFTModule,
-    SocialLoginModule
+    SocialLoginModule,
+    FormsModule
   ],
   providers: [{
     provide: AuthServiceConfig,
