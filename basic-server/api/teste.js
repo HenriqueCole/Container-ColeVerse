@@ -31,3 +31,15 @@ inserirRota('/teste_inserir_dados', (dados, resposta) => {
         resposta({ resposta: erro });
     });
 });
+
+inserirRota('/teste_criar_tabela', (dados, resposta) => {
+    console.log(dados);
+    database(`CREATE TABLE IF NOT EXISTS NFT (
+        ID INTEGER PRIMARY KEY AUTOINCREMENT,
+        image varchar(999999999)
+        )`).then(result => {
+        resposta({ resposta: 'TABELA NFT CRIADA' });
+    }).catch(erro => {
+        resposta({ resposta: erro });
+    });
+});

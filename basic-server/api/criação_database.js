@@ -23,3 +23,13 @@ database(`INSERT INTO PERSON VALUES (null, 'Henrique', '123'), (null, 'Cole', '4
 }).catch(erro => {
     console.log('INSERT NÃO CRIADO DEU ERRO AI MANO');
 });
+
+
+database(`CREATE TABLE IF NOT EXISTS NFT (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    image varchar(9999)
+    )`).then(result => {
+    console.log('TABELA NFT CRIADA! BOA MANO');
+}).catch(erro => {
+    console.log('TABELA NFT DEU ERRO AI MANO');
+});
