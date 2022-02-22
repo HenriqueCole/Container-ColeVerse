@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2/src/sweetalert2.js';
-var containerNFT = document.getElementsByClassName('container');
+// var containerNFT = document.getElementsByClassName('.container');
 
 
 @Component({
@@ -18,12 +18,17 @@ export class ListaSuaNFTComponent implements OnInit {
 
 
   ngOnInit() {
+    // this.clickBotao()
   }
 
 
   imageURL
   teste = 0;
   openModal
+
+  images = [
+    
+  ]
 
   mostrarImagem(event) {
     const file = new FileReader
@@ -47,10 +52,15 @@ export class ListaSuaNFTComponent implements OnInit {
   saidaDosInputs = 0;
 
   clickBotao() {
+    this.images.push(this.imageURL);
+    this.cont++;
+    this.contArr.push(this.cont);
+    console.log(this.contArr[this.cont-1]);
+    console.log(this.contArr[this.cont-2]);
     this.teste == 0;
     var item = document.createElement('li');
     var image = document.createElement('img');
-    image.src = this.imageURL;
+    image.src = this.images[this.cont];
     console.log(item)
     image.id = 'imagemSalva'
     this.openModal = 2;
@@ -62,7 +72,7 @@ export class ListaSuaNFTComponent implements OnInit {
 
     setTimeout(() => {
       this.saidaDosInputs = 1;
-    this.salvarDados.push({name: this.name, price: this.price, imageURL: this.imageURL})
+      this.salvarDados.push({name: this.name, price: this.price, imageURL: this.imageURL})
     }, 0);
 
     const Toast = Swal.mixin({
@@ -89,6 +99,9 @@ export class ListaSuaNFTComponent implements OnInit {
 
   name = "";
   price = "";
+
+  contArr = [];
+  cont = 0;
 
   editNFT(){
     Swal.fire({
@@ -124,7 +137,9 @@ export class ListaSuaNFTComponent implements OnInit {
         }, 1000);
         
       } else if (result.isDenied) {
-        Swal.fire('NFT removed!', '', 'success')
+        Swal.fire('NFT removed!', '', 'success')1
+        var containerNFT = document.getElementsByClassName(`.container`);
+        containerNFT.remove();
       }
     })
     

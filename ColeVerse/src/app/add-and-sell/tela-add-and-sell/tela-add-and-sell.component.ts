@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tela-add-and-sell',
@@ -19,7 +19,7 @@ export class TelaAddAndSellComponent implements OnInit {
     Swal.fire({
       title: 'Logging out!',
       html: 'You will LogOut in <b></b> milliseconds.',
-      timer: 2000,
+      timer: 1000,
       timerProgressBar: true,
       didOpen: () => {
         Swal.showLoading()
@@ -39,7 +39,7 @@ export class TelaAddAndSellComponent implements OnInit {
 
     setTimeout(() => {
       this.router.navigate(['/'])
-    }, 2000);
+    }, 1000);
 
     
 

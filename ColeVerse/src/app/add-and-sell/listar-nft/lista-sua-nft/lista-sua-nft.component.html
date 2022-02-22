@@ -59,12 +59,11 @@
   <div id="SavedNFT">
     <div *ngIf="saidaDosInputs == 1" class="saidaInputs">
       <div class="ladoALado">
-        <div *ngFor="let person of salvarDados, let i = index" (click)="hoverMouse()" class="container">
+        <div *ngFor="let person of salvarDados, let i = index" class="container {{contArr[i]}}">
           <img [src]="person.imageURL" alt="">
           <div class="dadosInputs">
           <p> Name: {{ person.name }}</p>
           <p> Price: {{ person.price }}</p>
-          <!-- <i class="fa-solid fa-check"></i> -->
         </div>
         <div class="containerButtonEdit">
           <button [(ngModel)]="editButton" (click)="editNFT()" class="editButton">⁝</button>
