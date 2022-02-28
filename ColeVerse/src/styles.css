@@ -15,3 +15,14 @@
     height: 45px;
     margin: 135px 0px 0px 1250px;
 }
+
+
+::-webkit-scrollbar{
+    width: 12px;
+    background-image: linear-gradient(315deg, #111213 0%, #151516 74%);
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(transparent, #7122FA);
+    border-radius: 6px;
+}
