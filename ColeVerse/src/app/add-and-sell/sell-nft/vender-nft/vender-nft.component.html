@@ -1,3 +1,4 @@
+<html>
 <body>
   <button class="voltarAddAndSell" (click)="router.navigate(['/telaAddAndSell'])">BACK</button>
 
@@ -7,4 +8,65 @@
   </div>
   
   <h2>Selling an NFT</h2>
+  <div class="containerButtonSave">
+    <i class="fas fa-download"></i>
+    <button (click)="abrirModal()" class="savingNFT">Sell</button>
+  </div>
+  <div *ngIf="openModal == 1" class="rodar">
+  <div   id="containerModal">
+    <div class="modal">
+  
+      <div class="inputs">
+        <h2 class="itemName" >Item name</h2>
+        <input [(ngModel)]="name" type="text" class="name">
+        <br />
+        <h2 class="itemPrice" >Price</h2>
+        <input [(ngModel)]="price" type="text" class="price">
+      </div>
+      
+      <div class="containerUpload">
+        <img *ngIf="teste == 1" [src]="imageURL" alt="" style="margin: -259px 0px 0px 336px">
+        <form action="">
+          <div>
+            <i *ngIf="teste != 1" class="fas fa-image"></i>
+  
+            <label *ngIf="teste == 0" for="arquivo">Upload NFT</label>
+  
+            <input *ngIf="teste !=1" type="file" name="arquivo" id="arquivo" (change)="mostrarImagem($event)">
+  
+          </div>
+        </form>
+        <br />
+      </div>
+  
+      <button *ngIf="teste == 1" class="sendNFT" (click)="clickBotao()">Sell</button>
+    </div>
+  </div>
+  </div>
+  <div id="SavedNFT">
+    <div *ngIf="saidaDosInputs == 1" class="saidaInputs">
+      <div class="ladoALado">
+
+
+        
+          <div *ngFor="let person of salvarDados, let i = index" class="container {{contArr[i]}}">
+            <img [src]="person.imageURL" alt="">
+            <div class="vendido">
+                  SOLD!
+            </div>
+            <div class="dadosInputs">
+            <p> Name: {{ person.name }}</p>
+            <p> Price: {{ person.price }}</p>
+          </div>
+          <div class="containerButtonEdit">
+            <button [(ngModel)]="editButton" (click)="editNFT()" class="editButton">⁝</button>
+          </div>
+          </div>
+        
+
+
+      </div>
+    </div>
+  </div>
 </body>
+</html>

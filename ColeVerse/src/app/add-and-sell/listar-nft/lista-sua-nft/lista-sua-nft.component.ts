@@ -155,9 +155,9 @@ export class ListaSuaNFTComponent implements OnInit {
         }, 1000);
 
       } else if (result.isDenied) {
-        Swal.fire('NFT removed!', '', 'success')1
+        Swal.fire('NFT removed!', '', 'success');
         var containerNFT = document.getElementsByClassName(`.container`);
-        containerNFT.remove();
+        // containerNFT.remove();
       }
     })
 

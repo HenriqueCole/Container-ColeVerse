@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { VenderNFTComponent } from './vender-nft/vender-nft.component';
 import { EditarNFTdaVendaComponent } from './editar-nftda-venda/editar-nftda-venda.component';
 import { RemoverNFTdaVendaComponent } from './remover-nftda-venda/remover-nftda-venda.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -23,7 +24,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
   declarations: [VenderNFTComponent, EditarNFTdaVendaComponent, RemoverNFTdaVendaComponent]
 })
