@@ -125,36 +125,9 @@ export class ListaSuaNFTComponent implements OnInit {
     Swal.fire({
       title: 'Configuration of your NFT',
       showDenyButton: true,
-      showCancelButton: true,
-      confirmButtonText: 'Edit',
       denyButtonText: `Remove`,
     }).then((result) => {
-      if (result.isConfirmed) {
-        let timerInterval
-        Swal.fire({
-          title: 'Redirecting...',
-          timer: 1000,
-          timerProgressBar: true,
-          didOpen: () => {
-            Swal.showLoading()
-            const b = Swal.getHtmlContainer().querySelector('b')
-            timerInterval = setInterval(() => {
-              b.textContent = Swal.getTimerLeft()
-            }, 100)
-          },
-          willClose: () => {
-            clearInterval(timerInterval)
-          }
-        }).then((result) => {
-          if (result.dismiss === Swal.DismissReason.timer) {
-            console.log('I was closed by the timer')
-          }
-        })
-        setTimeout(() => {
-          this.router.navigate(['/editarNFTListada']);
-        }, 1000);
-
-      } else if (result.isDenied) {
+     if (result.isDenied) {
         Swal.fire('NFT removed!', '', 'success');
         var containerNFT = document.getElementsByClassName(`.container`);
         // containerNFT.remove();
