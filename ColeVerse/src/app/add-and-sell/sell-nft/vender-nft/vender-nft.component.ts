@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2/src/sweetalert2.js';
+import Swal from 'sweetalert';
 
 @Component({
   selector: 'app-vender-nft',
@@ -14,10 +14,12 @@ export class VenderNFTComponent implements OnInit {
 
   ) { }
 
+  
 
   ngOnInit() {
+    
   }
-
+  
 
   imageURL
   teste = 0;
@@ -48,8 +50,9 @@ export class VenderNFTComponent implements OnInit {
   nome: String = "";
   saidaDosInputs = 0;
 
+  valorBalanca = 0;
+  salvaInt=0;
   clickBotao() {
-
     fetch('/api/NFT',
       {
         method: 'POST',
@@ -89,77 +92,26 @@ export class VenderNFTComponent implements OnInit {
     setTimeout(() => {
       this.saidaDosInputs = 1;
       this.salvarDados.push({ name: this.name, price: this.price, imageURL: this.imageURL })
+      for(let i = 0; i < this.salvarDados.length; i ++){
+
+        this.salvaInt = parseInt(this.salvarDados[i].price);
+        this.valorBalanca = this.valorBalanca + this.salvaInt
+        console.log(this.valorBalanca)
+      }
     }, 0);
 
-    const Toast = Swal.mixin({
-      toast: true,
-      position: 'top-end',
-      showConfirmButton: false,
-      timer: 1300,
-      timerProgressBar: true,
-      didOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
-      }
-    })
-
-    Toast.fire({
-      icon: 'success',
-      title: 'Your NFT has been saved'
-    })
-
-
+    for (let i = 0; i < this.salvarDados.length; i++){
+      this.valorBalanca = this.salvarDados[i].price;
+    }
+    console.log("Valor: ", this.valorBalanca);
   }
 
   salvarDados = []
-
   name = "";
   price = "";
 
   contArr = [];
   cont = 0;
-
-  editNFT() {
-    Swal.fire({
-      title: 'Configuration of your NFT',
-      showDenyButton: true,
-      showCancelButton: true,
-      confirmButtonText: 'Edit',
-      denyButtonText: `Remove`,
-    }).then((result) => {
-      if (result.isConfirmed) {
-        let timerInterval
-        Swal.fire({
-          title: 'Redirecting...',
-          timer: 1000,
-          timerProgressBar: true,
-          didOpen: () => {
-            Swal.showLoading()
-            const b = Swal.getHtmlContainer().querySelector('b')
-            timerInterval = setInterval(() => {
-              b.textContent = Swal.getTimerLeft()
-            }, 100)
-          },
-          willClose: () => {
-            clearInterval(timerInterval)
-          }
-        }).then((result) => {
-          if (result.dismiss === Swal.DismissReason.timer) {
-            console.log('I was closed by the timer')
-          }
-        })
-        setTimeout(() => {
-          this.router.navigate(['/editarNFTListada']);
-        }, 1000);
-
-      } else if (result.isDenied) {
-        Swal.fire('NFT removed!', '', 'success');
-        var containerNFT = document.getElementsByClassName(`.container`);
-        // containerNFT.remove();
-      }
-    })
-
-  }
 
   img64 = undefined;
 
@@ -173,5 +125,7 @@ export class VenderNFTComponent implements OnInit {
       console.log('Error: ', error);
     };
   }
+
+  
 
 }

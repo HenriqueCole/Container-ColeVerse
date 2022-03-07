@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2/src/sweetalert2.js';
-// var containerNFT = document.getElementsByClassName('.container');
-
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-lista-sua-nft',
@@ -93,24 +91,6 @@ export class ListaSuaNFTComponent implements OnInit {
       this.salvarDados.push({ name: this.name, price: this.price, imageURL: this.imageURL })
     }, 0);
 
-    const Toast = Swal.mixin({
-      toast: true,
-      position: 'top-end',
-      showConfirmButton: false,
-      timer: 1300,
-      timerProgressBar: true,
-      didOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
-      }
-    })
-
-    Toast.fire({
-      icon: 'success',
-      title: 'Your NFT has been saved'
-    })
-
-
   }
 
   salvarDados = []
@@ -122,17 +102,17 @@ export class ListaSuaNFTComponent implements OnInit {
   cont = 0;
 
   editNFT() {
-    Swal.fire({
-      title: 'Configuration of your NFT',
-      showDenyButton: true,
-      denyButtonText: `Remove`,
-    }).then((result) => {
-     if (result.isDenied) {
-        Swal.fire('NFT removed!', '', 'success');
-        var containerNFT = document.getElementsByClassName(`.container`);
-        // containerNFT.remove();
-      }
+    swal("Configuration of your NFT!", {
+      buttons: ["Remove", true],
     })
+    .then((value) => {
+      switch (value) {
+        case "catch":
+          break;
+        default:
+          swal("NFT removed!", "", "success");
+      }
+    });
 
   }
 

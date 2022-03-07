@@ -9,6 +9,7 @@ import { Observable } from "rxjs";
  
 @Injectable()
 class CheckLogged implements CanActivate{
+    usuarios: any;
     constructor(
         private router: Router
     ){}

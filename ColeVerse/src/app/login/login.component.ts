@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from '../services/usuario.service';
 import { AuthService, GoogleLoginProvider } from 'angular-6-social-login-v2';
-import Swal from 'sweetalert2'
+import swal from 'sweetalert'
 
 @Component({
   selector: 'app-login',
@@ -29,13 +29,7 @@ export class LoginComponent implements OnInit {
     this.socialAuthService.signIn(socialPlatformProvider).then(
       (userData) => {
         console.log(socialPlatform + " sign in data : ", userData);
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'You are logged in with Google!',
-          showConfirmButton: false,
-          timer: 1500
-        })
+        swal("Login successful!", "Login with Google!", "success");
         setTimeout(() => {
           this.router.navigate(["/telaAddAndSell"])
         }, 1600);
@@ -59,40 +53,28 @@ export class LoginComponent implements OnInit {
       .then((resultado: User[]) => {
         for (let i = 0; i < resultado.length; i++) {
           if (this.user === resultado[i].NOME && this.password === resultado[i].PASSWORD) {
-            Swal.fire({
-              position: 'top-end',
-              icon: 'success',
-              title: 'You are logged in!',
-              showConfirmButton: false,
-              timer: 1500
-            })
+            swal("Login successful!", "Login with your credentials!", "success");
             setTimeout(() => {
               this.router.navigate(["/telaAddAndSell"])
             }, 1600);
             return
           } else {
-            Swal.fire({
-              position: 'top-end',
-              icon: 'error',
-              title: 'Wrong credentials',
-              showConfirmButton: false,
-              timer: 900
-            })
+            swal("Wrong Credentials!", "", "error");
           }
         }
       })
 
   }
 
-  loginMeta() {
-    if (ethereum && ethereum.isConnected()) {
-      window.ethereum.request({ method: 'eth_requestAccounts' }).then(result => {
-        console.log(result);
-      })
-    } else {
-      alert('É necessário instalar a extensão do metamask')
-    }
-  }
+  // loginMeta() {
+  //   if (ethereum && ethereum.isConnected()) {
+  //     window.ethereum.request({ method: 'eth_requestAccounts' }).then(result => {
+  //       console.log(result);
+  //     })
+  //   } else {
+  //     alert('É necessário instalar a extensão do metamask')
+  //   }
+  // }
 
 
 }

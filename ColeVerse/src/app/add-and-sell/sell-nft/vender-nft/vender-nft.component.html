@@ -6,7 +6,11 @@
     <div class="cole">Cole</div>
     <div class="verse">Verse</div>
   </div>
-  
+  <div class="containerBalance">
+    <div class="balance">
+      <h1>Balance: ${{ valorBalanca }}</h1>
+    </div>
+  </div>
   <h2>Selling an NFT</h2>
   <div class="containerButtonSave">
     <i class="fas fa-download"></i>
@@ -58,13 +62,7 @@
             <p> Name: {{ person.name }}</p>
             <p> Price: {{ person.price }}</p>
           </div>
-          <div class="containerButtonEdit">
-            <button [(ngModel)]="editButton" (click)="editNFT()" class="editButton">⁝</button>
           </div>
-          </div>
-        
-
-
       </div>
     </div>
   </div>
