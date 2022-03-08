@@ -14,20 +14,14 @@ export class VenderNFTComponent implements OnInit {
 
   ) { }
 
-  
-
   ngOnInit() {
     
   }
   
-
   imageURL
   teste = 0;
   openModal
-
-  images = [
-
-  ]
+  images = []
 
   mostrarImagem(event) {
     const file = new FileReader
@@ -53,11 +47,7 @@ export class VenderNFTComponent implements OnInit {
   valorBalanca
   salvaInt
 
-
-
-
   clickBotao() {
-   
     console.log("Salva int: ", this.salvaInt)
     console.log("Valor: ", this.valorBalanca);
     fetch('/api/NFT',
@@ -105,17 +95,13 @@ export class VenderNFTComponent implements OnInit {
         this.salvaInt = 0;
       }
     }, 0);
-
-    
   }
 
   salvarDados = []
   name = "";
   price = "";
-
   contArr = [];
   cont = 0;
-
   img64 = undefined;
 
   mudanca(file) {
@@ -128,7 +114,4 @@ export class VenderNFTComponent implements OnInit {
       console.log('Error: ', error);
     };
   }
-
-  
-
 }
