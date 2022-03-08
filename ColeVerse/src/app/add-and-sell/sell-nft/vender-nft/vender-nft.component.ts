@@ -50,9 +50,16 @@ export class VenderNFTComponent implements OnInit {
   nome: String = "";
   saidaDosInputs = 0;
 
-  valorBalanca = 0;
-  salvaInt=0;
+  valorBalanca
+  salvaInt
+
+
+
+
   clickBotao() {
+   
+    console.log("Salva int: ", this.salvaInt)
+    console.log("Valor: ", this.valorBalanca);
     fetch('/api/NFT',
       {
         method: 'POST',
@@ -80,7 +87,6 @@ export class VenderNFTComponent implements OnInit {
     var item = document.createElement('li');
     var image = document.createElement('img');
     image.src = this.images[this.cont];
-    console.log(item)
     image.id = 'imagemSalva'
     this.openModal = 2;
 
@@ -92,18 +98,15 @@ export class VenderNFTComponent implements OnInit {
     setTimeout(() => {
       this.saidaDosInputs = 1;
       this.salvarDados.push({ name: this.name, price: this.price, imageURL: this.imageURL })
+      this.valorBalanca = 0;
       for(let i = 0; i < this.salvarDados.length; i ++){
-
-        this.salvaInt = parseInt(this.salvarDados[i].price);
-        this.valorBalanca = this.valorBalanca + this.salvaInt
-        console.log(this.valorBalanca)
+        this.salvaInt = Number(this.salvarDados[i].price);
+        this.valorBalanca = Number(this.valorBalanca + this.salvaInt)
+        this.salvaInt = 0;
       }
     }, 0);
 
-    for (let i = 0; i < this.salvarDados.length; i++){
-      this.valorBalanca = this.salvarDados[i].price;
-    }
-    console.log("Valor: ", this.valorBalanca);
+    
   }
 
   salvarDados = []

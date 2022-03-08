@@ -259,7 +259,7 @@ label:hover{
 }
 
 .savingNFT{
-    margin: 0px 0px 0px 15px;
+    margin: 0px 0px 20px 15px;
     border: none;
     height: 40px;
     width: 120px;
@@ -318,7 +318,6 @@ label:hover{
 .ladoALado{
     display: flex;
     Flex-wrap: wrap;
-    margin: 20px 0px 0px 23px;
 }
 
 .containerButtonEdit{
@@ -382,8 +381,11 @@ label:hover{
     justify-content: end;
     align-items: center;
     margin: 0px 250px 0px 0px;
+    position: relative;
 }
 
 .balance{
     color: #20ab20;
+    position: absolute;
+    margin: 120px 0px 0px 0px;
 }
