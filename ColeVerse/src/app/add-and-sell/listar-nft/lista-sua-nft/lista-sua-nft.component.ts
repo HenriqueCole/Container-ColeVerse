@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import swal from 'sweetalert';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-lista-sua-nft',
@@ -10,12 +11,13 @@ import swal from 'sweetalert';
 export class ListaSuaNFTComponent implements OnInit {
 
   constructor(
-    private router: Router
-
+    private router: Router,
+    private usuarioService: UsuarioService
   ) { }
 
 
   ngOnInit() {
+    
   }
 
 
@@ -38,6 +40,10 @@ export class ListaSuaNFTComponent implements OnInit {
 
 
   abrirModal() {
+    this.usuarioService.inserirNFT(this.name, this.imageURL, this.price);
+    console.log(this.name);
+    console.log(this.imageURL);
+    console.log(this.price);
     this.openModal = 1
     this.teste = 0;
     this.name = ""
@@ -108,9 +114,8 @@ export class ListaSuaNFTComponent implements OnInit {
     .then((value) => {
       switch (value) {
         case "catch":
-          break;
-        default:
           swal("NFT removed!", "", "success");
+          break;
       }
     });
 

@@ -27,9 +27,12 @@ database(`INSERT INTO PERSON VALUES (null, 'Henrique', '123'), (null, 'Cole', '4
 
 database(`CREATE TABLE IF NOT EXISTS NFT (
     ID INTEGER PRIMARY KEY AUTOINCREMENT,
-    image varchar(9999)
+    image varchar(9999),
+    price varchar(45),
+    nome varchar(45)
     )`).then(result => {
-    console.log('TABELA NFT CRIADA! BOA MANO');
+    console.log('TABELA NFT EDITADA CRIADA!');
 }).catch(erro => {
-    console.log('TABELA NFT DEU ERRO AI MANO');
+    console.log('TABELA NFT EDITADA DEU ERRO!');
 });
+
