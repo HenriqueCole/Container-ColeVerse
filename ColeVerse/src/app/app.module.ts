@@ -12,6 +12,7 @@ import {
   GoogleLoginProvider
 } from "angular-6-social-login-v2";
 import { FormsModule } from '@angular/forms';
+import CheckLogged from './checkLogged';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(

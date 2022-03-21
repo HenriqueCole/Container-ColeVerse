@@ -49,21 +49,15 @@ export class LoginComponent implements OnInit {
 
 
   goToAddSell() {
-    this.usuarioService.buscarUsuarios()
-      .then((resultado: User[]) => {
-        for (let i = 0; i < resultado.length; i++) {
-          if (this.user === resultado[i].NOME && this.password === resultado[i].PASSWORD) {
-            swal("Login successful!", "Login with your credentials!", "success");
-            setTimeout(() => {
-              this.router.navigate(["/telaAddAndSell"])
-            }, 1600);
-            return
-          } else {
-            swal("Wrong Credentials!", "", "error");
-          }
-        }
-      })
-
+    console.log("ENTROU NA FUNCAO")
+    this.usuarioService.buscarLogin(this.user, this.password).then(resultado => {
+      if(resultado != ""){
+        localStorage.setItem("USER: ", this.user)
+        localStorage.setItem("PASSWD: ", this.password)
+        this.router.navigate(["/telaAddAndSell"])
+      }
+    })
+    console.log("SAIU DA UFNCAO")
   }
 
   // loginMeta() {

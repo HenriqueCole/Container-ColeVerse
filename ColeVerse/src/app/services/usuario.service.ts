@@ -45,4 +45,23 @@ export class UsuarioService {
     })
   }
 
+  buscarLogin(name, password){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/login', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            name, password 
+          })
+          ,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
+
+
 }

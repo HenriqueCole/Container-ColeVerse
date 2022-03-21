@@ -6,15 +6,15 @@ import {
     RouterStateSnapshot
 } from "@angular/router";
 import { Observable } from "rxjs";
+import { UsuarioService } from "./services/usuario.service";
  
 @Injectable()
 class CheckLogged implements CanActivate{
     usuarios: any;
     constructor(
-        private router: Router
+        private router: Router,
+        private usuarioService: UsuarioService
     ){}
- 
-
  
     canActivate(
         route: ActivatedRouteSnapshot,
@@ -23,20 +23,13 @@ class CheckLogged implements CanActivate{
  
             let username = localStorage.getItem('USER')
             let password = localStorage.getItem('PASSWORD')
-
-            const user = this.usuarios.find((item) => item.username === username);
-
-            if(user.password == password && user.username == username){
+            
+            if(username && password){
                 return true;
-            }else{
-                username = ''
-                password = ''
-                alert('Usuário não cadastrado')
-                this.router.navigate([''])
+            } else {
+                this.router.navigate(["/"]);
                 return false;
             }
- 
- 
     }
 }
  

@@ -69,19 +69,19 @@ inserirRota('/buscar_usuario', function(dados, resposta) {
         });
 })
 
-inserirRota('/login', function(dados, resposta) {
-    console.log(dados)
+// inserirRota('/login', function(dados, resposta) {
+//     console.log(dados)
 
-    database(`SELECT * FROM PERSON`)
-        .then(result => {
+//     database(`SELECT * FROM PERSON`)
+//         .then(result => {
 
-            resposta(result)
+//             resposta(result)
 
 
-        }).catch(erro => {
-            resposta({ erro: 'Erro ao inserir o usuario!' });
-        });
-})
+//         }).catch(erro => {
+//             resposta({ erro: 'Erro ao inserir o usuario!' });
+//         });
+// })
 
 inserirRota('/inserir_nft', (dados, resposta)=>{
     database(`insert into NFT (image, price, name) values ("${dados.imageURL}", "${dados.price}", "${dados.name}")`)
@@ -92,6 +92,18 @@ inserirRota('/inserir_nft', (dados, resposta)=>{
     })
 })
 
+
+inserirRota('/login',
+    function (dados, resposta) {
+        console.log(dados, resposta);
+    database(`SELECT * FROM PERSON WHERE NOME = "${dados.name}" AND PASSWORD = "${dados.password}" LIMIT 1`)
+        .then(result => {
+            console.log('result:', result);
+        resposta(result)
+    }).catch(erro => {
+        resposta({erro: 'Erro ao buscar os usuários!'})
+    });
+})
 
 
 // fetch('/api/buscar_usuario',
