@@ -4,15 +4,14 @@ import { ListaSuaNFTComponent } from './lista-sua-nft/lista-sua-nft.component';
 import { RemoverNFTComponent } from './remover-nft/remover-nft.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import CheckLogged from 'src/app/checkLogged';
 
 const routes: Routes = [
   {
     path: 'listarNFT',
-    component: ListaSuaNFTComponent
-  },
-  {
-    path: 'removerNftListada',
-    component: RemoverNFTComponent
+    component: ListaSuaNFTComponent, canActivate: [
+      CheckLogged
+    ]
   }
 ]
 
@@ -22,6 +21,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FormsModule
   ],
+  providers: [CheckLogged],
   declarations: [ListaSuaNFTComponent, RemoverNFTComponent]
 })
 export class ListarNFTModule { }
