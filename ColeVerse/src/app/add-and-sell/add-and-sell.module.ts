@@ -20,6 +20,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FormsModule
   ],
+  providers: [CheckLogged],
   declarations: [TelaAddAndSellComponent]
 })
 export class AddAndSellModule { }

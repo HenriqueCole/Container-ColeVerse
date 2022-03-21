@@ -49,17 +49,18 @@ export class LoginComponent implements OnInit {
 
 
   goToAddSell() {
-    console.log("ENTROU NA FUNCAO")
     this.usuarioService.buscarLogin(this.user, this.password).then(resultado => {
       if(resultado != ""){
-        localStorage.setItem("USER: ", this.user)
-        localStorage.setItem("PASSWD: ", this.password)
-        this.router.navigate(["/telaAddAndSell"])
+        localStorage.setItem("USER", this.user)
+        localStorage.setItem("PASSWORD", this.password)
+        swal("Login success!", "", "success");
+          setTimeout(() => {
+          this.router.navigate(['/telaAddAndSell'])
+        }, 1000);
+      } else {
+        swal("Wrong Credentials!", "", "error");
       }
-    })
-    console.log("SAIU DA UFNCAO")
   }
-
   // loginMeta() {
   //   if (ethereum && ethereum.isConnected()) {
   //     window.ethereum.request({ method: 'eth_requestAccounts' }).then(result => {
