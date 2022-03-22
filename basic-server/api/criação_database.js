@@ -36,3 +36,13 @@ database(`CREATE TABLE IF NOT EXISTS NFT (
     console.log('TABELA NFT EDITADA DEU ERRO!');
 });
 
+database(`CREATE TABLE IF NOT EXISTS VENDEDOR (
+    PERSON_ID INTEGER, 
+    FOREIGN KEY (PERSON_ID)
+    REFERENCES PERSON(ID)
+    )`).then(result => {
+    console.log('TABELA VENDEDOR CRIADA! BOA MANO');
+}).catch(erro => {
+    console.log('TABELA VENDEDOR DEU ERRO AI MANO');
+});
+

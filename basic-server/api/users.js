@@ -61,7 +61,7 @@ inserirRota('/buscar_usuario', function(dados, resposta) {
     database(`SELECT * FROM PERSON`)
         .then(result => {
 
-            resposta({ list: result })
+            resposta(result )
 
 
         }).catch(erro => {
@@ -105,6 +105,15 @@ inserirRota('/login',
     });
 })
 
+
+inserirRota('/inserir_vendedor', (dados, resposta)=>{
+    database(`insert into VENDEDOR (ID) values ("${dados.id}")`)
+    .then(result => {
+        resposta ({message: "ID VENDEDOR inserida com sucesso!"})
+    }).catch(error => {
+        resposta ({erro: error})
+    })
+})
 
 // fetch('/api/buscar_usuario',
 //     {  

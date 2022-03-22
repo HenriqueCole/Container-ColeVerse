@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-vender-nft',
@@ -10,12 +11,14 @@ import Swal from 'sweetalert';
 export class VenderNFTComponent implements OnInit {
 
   constructor(
-    private router: Router
-
+    private router: Router,
+    private usuarioService: UsuarioService
   ) { }
 
   ngOnInit() {
-    
+    this.usuarioService.buscarUsuarios().then(resultado =>
+      console.log(resultado))
+         
   }
   
   imageURL
