@@ -107,13 +107,28 @@ inserirRota('/login',
 
 
 inserirRota('/inserir_vendedor', (dados, resposta)=>{
-    database(`insert into VENDEDOR (ID) values ("${dados.id}")`)
+    database(`INSERT INTO VENDEDOR (PERSON_ID) VALUES ("${dados.id}")`)
     .then(result => {
-        resposta ({message: "ID VENDEDOR inserida com sucesso!"})
+        resposta ({message: "ID VENDEDOR inserido com sucesso!"})
     }).catch(error => {
-        resposta ({erro: error})
+        resposta ({erro:"ERRO INSERIR VENDEDOR: ",error})
     })
 })
+
+inserirRota('/buscarVendedor', function(dados, resposta) {
+    console.log(dados)
+
+    database(`SELECT * FROM VENDEDOR`)
+        .then(result => {
+
+            resposta(result)
+
+
+        }).catch(erro => {
+            resposta({ erro: 'SELECT VENDEDOR FALHA' });
+        });
+})
+
 
 // fetch('/api/buscar_usuario',
 //     {  

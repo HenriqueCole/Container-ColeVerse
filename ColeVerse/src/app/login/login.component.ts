@@ -54,30 +54,34 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("USER", this.user)
         localStorage.setItem("PASSWORD", this.password)
         swal("Login success!", "", "success");
-          setTimeout(() => {
+        setTimeout(() => {
           this.router.navigate(['/telaAddAndSell'])
         }, 1000);
       } else {
         swal("Wrong Credentials!", "", "error");
       }
+    })
   }
+}
+
+
+  interface User {
+    NOME: String;
+    PASSWORD: String;
+  }
+    
+  
   // loginMeta() {
-  //   if (ethereum && ethereum.isConnected()) {
-  //     window.ethereum.request({ method: 'eth_requestAccounts' }).then(result => {
-  //       console.log(result);
-  //     })
-  //   } else {
-  //     alert('É necessário instalar a extensão do metamask')
+  //     if (ethereum && ethereum.isConnected()) {
+  //       window.ethereum.request({ method: 'eth_requestAccounts' }).then(result => {
+  //         console.log(result);
+  //       })
+  //     } else {
+  //       alert('É necessário instalar a extensão do metamask')
+  //     }
   //   }
-  // }
+  
+  // window.ethereum.request({method: 'eth_requestAccounts'}).then(result => {
+  //   console.log(result[0])};
+  
 
-
-}
-interface User {
-  NOME: String;
-  PASSWORD: String;
-}
-
-// window.ethereum.request({method: 'eth_requestAccounts'}).then(result => {
-//   console.log(result[0]);
-// })

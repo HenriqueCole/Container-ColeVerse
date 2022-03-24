@@ -24,7 +24,7 @@ export class TelaAddAndSellComponent implements OnInit {
             for (let i = 0; i < resultado.length; i++){
               if (username == resultado[i].NOME && passwd == resultado[i].PASSWORD){
                 this.id = resultado[i].ID
-                console.log(this.id)
+                break;
               }
             }
           })
@@ -32,6 +32,8 @@ export class TelaAddAndSellComponent implements OnInit {
   }
 
   logOut() {
+    localStorage.removeItem("USER")
+    localStorage.removeItem("PASSWORD")
     swal("Logout success!", "", "success");
     setTimeout(() => {
       this.router.navigate(['/'])
@@ -39,8 +41,16 @@ export class TelaAddAndSellComponent implements OnInit {
   }
 
   irParaSell(){
-    this.usuarioService.inserirVendedor(this.id)
-    this.router.navigate(['/vendernft'])
+    this.usuarioService.buscarVendedor().then((resultado: any)=>{
+      for (let i = 0; i < resultado.length; i++){
+        if (this.id != resultado.ID){
+          this.usuarioService.inserirVendedor(this.id)
+          console.log(resultado)
+          break;
+        }
+      }
+    })
+      this.router.navigate(['/vendernft'])
   }
 }
 

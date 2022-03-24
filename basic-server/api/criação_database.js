@@ -9,7 +9,7 @@
 // });
 
 database(`CREATE TABLE IF NOT EXISTS PERSON (
-    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
     NOME varchar(30),
     PASSWORD varchar(30)
     )`).then(result => {
@@ -37,12 +37,17 @@ database(`CREATE TABLE IF NOT EXISTS NFT (
 });
 
 database(`CREATE TABLE IF NOT EXISTS VENDEDOR (
-    PERSON_ID INTEGER, 
+    PERSON_ID INTEGER UNIQUE, 
     FOREIGN KEY (PERSON_ID)
     REFERENCES PERSON(ID)
     )`).then(result => {
     console.log('TABELA VENDEDOR CRIADA! BOA MANO');
 }).catch(erro => {
     console.log('TABELA VENDEDOR DEU ERRO AI MANO');
+});
+database(`INSERT INTO VENDEDOR VALUES (999)`).then(result => {
+    console.log('INSERT VENDEDOR CRIADO! BOA MANO');
+}).catch(erro => {
+    console.log('INSERT VENDEDOR NÃO CRIADO DEU ERRO AI MANO');
 });
 

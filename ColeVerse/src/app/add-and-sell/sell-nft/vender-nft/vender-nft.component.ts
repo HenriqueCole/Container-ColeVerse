@@ -16,9 +16,6 @@ export class VenderNFTComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.usuarioService.buscarUsuarios().then(resultado =>
-      console.log(resultado))
-         
   }
   
   imageURL
