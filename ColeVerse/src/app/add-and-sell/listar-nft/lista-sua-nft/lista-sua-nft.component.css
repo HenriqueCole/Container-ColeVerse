@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 *{
     font-family: 'Poppins', sans-serif;
 }
@@ -345,4 +345,10 @@ label:hover{
     font-weight: 600;
     border-radius: 57px;
     cursor: pointer;
+}
+
+.produto{
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
 }

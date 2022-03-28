@@ -82,17 +82,6 @@ inserirRota('/buscar_usuario', function(dados, resposta) {
 //             resposta({ erro: 'Erro ao inserir o usuario!' });
 //         });
 // })
-
-inserirRota('/inserir_nft', (dados, resposta)=>{
-    database(`insert into NFT (image, price, name) values ("${dados.imageURL}", "${dados.price}", "${dados.name}")`)
-    .then(result => {
-        resposta ({message: "NFT inserida com sucesso!"})
-    }).catch(error => {
-        resposta ({erro: error})
-    })
-})
-
-
 inserirRota('/login',
     function (dados, resposta) {
         console.log(dados, resposta);

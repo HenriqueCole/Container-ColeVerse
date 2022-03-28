@@ -17,13 +17,24 @@ export class ListaSuaNFTComponent implements OnInit {
 
 
   ngOnInit() {
-    
+    fetch('/api/buscar_nft',
+    {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }
+    }).then(function (result) {
+      return result.json();
+    }).then((dados) => {
+      console.log(dados)
+      this.listaNFT = dados.list;
+      console.log("essa é a lista nft --> " , this.listaNFT)
+    }
+    ).catch(function (erro) { console.log(erro); })
   }
 
 
   imageURL
   teste = 0;
-  openModal
+  openModal;
+  listaNFT = []
 
   images = [
 
@@ -39,11 +50,9 @@ export class ListaSuaNFTComponent implements OnInit {
   }
 
 
+
+
   abrirModal() {
-    this.usuarioService.inserirNFT(this.name, this.imageURL, this.price);
-    console.log(this.name);
-    console.log(this.imageURL);
-    console.log(this.price);
     this.openModal = 1
     this.teste = 0;
     this.name = ""
@@ -54,13 +63,24 @@ export class ListaSuaNFTComponent implements OnInit {
   nome: String = "";
   saidaDosInputs = 0;
 
-  clickBotao() {
+  mudanca(file) {
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.img64 = reader.result;    
+    };
+  }
 
-    fetch('/api/NFT',
+  clickBotao() {
+    // this.usuarioService.inserirNFT(this.name, this.imageURL, this.price);
+
+    fetch('/api/inserir_nft',
       {
         method: 'POST',
         body: JSON.stringify({
-          img: this.img64
+          nome: this.name,
+          image: this.imageURL,
+          price: this.price
         }),
         headers: {
           'Content-Type': 'application/json'
@@ -77,13 +97,13 @@ export class ListaSuaNFTComponent implements OnInit {
     this.images.push(this.imageURL);
     this.cont++;
     this.contArr.push(this.cont);
-    console.log(this.contArr[this.cont - 1]);
-    console.log(this.contArr[this.cont - 2]);
+    console.log("CONTAINER NFT: ",this.contArr[this.cont - 1]);
+    console.log("OUTRO CONTAINER NFT: ",this.contArr[this.cont - 2]);
     this.teste == 0;
     var item = document.createElement('li');
     var image = document.createElement('img');
     image.src = this.images[this.cont];
-    console.log(item)
+    console.log("LI: ",item)
     image.id = 'imagemSalva'
     this.openModal = 2;
 
@@ -122,16 +142,4 @@ export class ListaSuaNFTComponent implements OnInit {
   }
 
   img64 = undefined;
-
-  mudanca(file) {
-    var reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      this.img64 = reader.result;
-    };
-    reader.onerror = (error) => {
-      console.log('Error: ', error);
-    };
-  }
-
 }

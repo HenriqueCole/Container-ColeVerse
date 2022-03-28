@@ -94,6 +94,26 @@ body{
     background-size: 100% 100%;
     background-position-x: left;
 }
+.buy{
+    border: none;
+    height: 60px;
+    width: 200px;
+    background-color: #fa2222;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    background-image: linear-gradient(#da412c , #d64622 );
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position-x: right;
+    transition: background-size 500ms;
+}
+.buy:hover{
+    background-size: 100% 100%;
+    background-position-x: left;
+}
 
 .voltar{
     position: absolute;

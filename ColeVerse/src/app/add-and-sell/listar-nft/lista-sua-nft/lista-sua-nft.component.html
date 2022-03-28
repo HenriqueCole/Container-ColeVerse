@@ -19,8 +19,11 @@
     <div class="cole">Cole</div>
     <div class="verse">Verse</div>
   </div>
-  
-  <h2 class="Listing">Save your NFT</h2>
+  <div class="produto" *ngFor="let item of listaNFT"><img id="imgproduto" [src]=item.image alt=""><div class="produtoinfos"><div class="produtoname">{{item.nome}}</div><div class="produtodesc">{{item.price}}</div></div></div>
+
+  <h2 class="Listing">Save your NFT       {{listaNFT.nome}}
+  </h2>
+  <div *NgFor let item of listaNFT>{{item.nome}} </div>
   <div class="containerButtonSave">
     <i class="fas fa-download"></i>
     <button (click)="abrirModal()" class="savingNFT">Save</button>
@@ -52,7 +55,7 @@
         <br />
       </div>
   
-      <button *ngIf="teste == 1" class="sendNFT" (click)="clickBotao()">Save</button>
+      <button *ngIf="teste == 1" class="sendNFT" (change)="mudanca($event.target.files[0])" (click)="clickBotao()">Save</button>
     </div>
   </div>
   </div>
@@ -66,7 +69,6 @@
           <p> Price: {{ person.price }}</p>
         </div>
         <div class="containerButtonEdit">
-          <button [(ngModel)]="editButton" (click)="editNFT()" class="editButton">⁝</button>
         </div>
         </div>
       </div>

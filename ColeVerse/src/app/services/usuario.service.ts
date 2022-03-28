@@ -21,28 +21,6 @@ export class UsuarioService {
     })
   }
 
-  inserirNFT(name, imageURL, price){
-    return new Promise((resolve, rejeitado) => {
-      fetch('/api/inserir_nft', {
-        method: 'POST',
-        body: JSON.stringify(
-          {
-            name, imageURL, price
-          }
-        ),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }).then(function (result) {
-        return result.json();
-    }).then(function (dados){
-        console.log(dados);
-    }).catch(function(erro) {
-        console.log(erro);
-    })
-    })
-  }
-
   buscarLogin(name, password){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/login', {
