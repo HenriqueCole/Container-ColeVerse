@@ -45,7 +45,7 @@ export class TelaAddAndSellComponent implements OnInit {
       for (let i = 0; i < resultado.length; i++){
         if (this.id != resultado.ID){
           this.usuarioService.inserirVendedor(this.id)
-          console.log(resultado)
+          console.log("USER VENDEDOR INSERIDO: ",resultado)
           break;
         }
       }
