@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
 
   user = '';
   password = '';
+  id = '';
 
 
   public socialSignIn(socialPlatform: string) {
@@ -49,10 +50,11 @@ export class LoginComponent implements OnInit {
 
 
   goToAddSell() {
-    this.usuarioService.buscarLogin(this.user, this.password).then(resultado => {
+    this.usuarioService.buscarLogin(this.user, this.password, this.id).then(resultado => {
       if(resultado != ""){
         localStorage.setItem("USER", this.user)
         localStorage.setItem("PASSWORD", this.password)
+        localStorage.setItem("ID", this.id)
         swal("Login success!", "", "success");
         setTimeout(() => {
           this.router.navigate(['/telaAddAndSell'])
@@ -61,6 +63,31 @@ export class LoginComponent implements OnInit {
         swal("Wrong Credentials!", "", "error");
       }
     })
+
+
+    fetch('/api/login',
+    {
+        method: 'POST',
+        body: JSON.stringify(
+            {
+                name: this.user, password: this.password
+            }
+        ),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+  ).then(function (result){
+    return result.json();
+  }).then((dados)=>{
+      localStorage.setItem('login', this.user);
+      localStorage.setItem('senha', this.password);
+      localStorage.setItem('ID', this.id);
+  
+   }).catch(function(erro){
+    console.log(erro)
+  })
+    
   }
 }
 

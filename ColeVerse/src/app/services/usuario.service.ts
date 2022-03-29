@@ -21,13 +21,13 @@ export class UsuarioService {
     })
   }
 
-  buscarLogin(name, password){
+  buscarLogin(name, password, id){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/login', {
         method: 'POST',
         body: JSON.stringify(
           {
-            name, password 
+            name, password
           })
           ,
         headers: {

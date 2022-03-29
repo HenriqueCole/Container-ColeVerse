@@ -15,8 +15,11 @@ export class ListaSuaNFTComponent implements OnInit {
     private usuarioService: UsuarioService
   ) { }
 
+  idPessoa = localStorage.getItem('IDUSER');
+
 
   ngOnInit() {
+    console.log(this.idPessoa);
     fetch('/api/buscar_nft',
     {
       method: 'POST', headers: { 'Content-Type': 'application/json' }
@@ -36,6 +39,7 @@ export class ListaSuaNFTComponent implements OnInit {
   openModal;
   listaNFT = []
 
+  
   images = [
 
   ]
@@ -116,8 +120,10 @@ export class ListaSuaNFTComponent implements OnInit {
       this.saidaDosInputs = 1;
       this.salvarDados.push({ name: this.name, price: this.price, imageURL: this.imageURL })
     }, 0);
-
-    document.location.reload();
+    setTimeout(() => {
+      document.location.reload();
+    }, 0);
+    
 
   }
 
