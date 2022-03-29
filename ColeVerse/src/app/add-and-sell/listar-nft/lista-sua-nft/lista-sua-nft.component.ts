@@ -117,6 +117,8 @@ export class ListaSuaNFTComponent implements OnInit {
       this.salvarDados.push({ name: this.name, price: this.price, imageURL: this.imageURL })
     }, 0);
 
+    document.location.reload();
+
   }
 
   salvarDados = []

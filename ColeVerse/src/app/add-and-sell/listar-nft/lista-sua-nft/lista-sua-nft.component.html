@@ -19,8 +19,6 @@
     <div class="cole">Cole</div>
     <div class="verse">Verse</div>
   </div>
-  <div class="produto" *ngFor="let item of listaNFT"><img id="imgproduto" [src]=item.image alt=""><div class="produtoinfos"><div class="produtoname">{{item.nome}}</div><div class="produtodesc">{{item.price}}</div></div></div>
-
   <h2 class="Listing">Save your NFT       {{listaNFT.nome}}
   </h2>
   <div *NgFor let item of listaNFT>{{item.nome}} </div>
@@ -59,6 +57,7 @@
     </div>
   </div>
   </div>
+  
   <div id="SavedNFT">
     <div *ngIf="saidaDosInputs == 1" class="saidaInputs">
       <div class="ladoALado">
@@ -68,11 +67,20 @@
           <p> Name: {{ person.name }}</p>
           <p> Price: {{ person.price }}</p>
         </div>
-        <div class="containerButtonEdit">
-        </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="containerProdutos">
+    <div class="produto" *ngFor="let item of listaNFT">
+      <img id="imgproduto" [src]=item.image alt="">
+      <div class="produtoinfos">
+        <div class="produtoname">Name:  {{item.nome}}</div>
+        <div class="produtodesc">Price:  {{item.price}}</div>
+      </div>
+    </div>
+  </div>
+  
+  
 </body>
 </html>

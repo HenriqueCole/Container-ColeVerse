@@ -288,15 +288,15 @@ label:hover{
     display: flex;
     column-gap: 0px;
     min-width: 100%;
-    justify-content: center;
-    list-style: none;
     column-gap: 20px;
 }
 
 .container{
     display: flex;
+    column-gap: 0px;
+    min-width: 100%;
+    column-gap: 20px;
     justify-content: center;
-    margin: 0px 0px 15px 10px;
     align-items: center;
     border: 2px solid #2d1c1c;
     height: 405px;
@@ -309,6 +309,36 @@ label:hover{
     box-shadow: #040303 0px 1px 3px 1px;
 }
 
+.produto{
+    display: flex;
+    justify-content: grid;
+    margin: 0px 0px 15px 10px;
+    align-items: center;
+    border: 2px solid #2d1c1c;
+    width: 44vh;
+    height: 405px;
+    border-radius: 17px;
+    position: relative;
+}
+.produto:hover{
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.2);
+    transform: translateY(-6px);
+    box-shadow: #040303 0px 1px 3px 1px;
+}
+.produtoinfos{
+    position: absolute;
+    bottom: 9px;
+    left: 3%;
+    font-size: 20px;
+    color: white;
+}
+
+.containerProdutos{
+    flex-wrap: wrap;
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+}
 .dadosInputs{
     position: absolute;
     bottom: 9px;
@@ -345,10 +375,4 @@ label:hover{
     font-weight: 600;
     border-radius: 57px;
     cursor: pointer;
-}
-
-.produto{
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
 }
