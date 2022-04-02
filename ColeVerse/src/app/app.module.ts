@@ -13,6 +13,7 @@ import {
 } from "angular-6-social-login-v2";
 import { FormsModule } from '@angular/forms';
 import CheckLogged from './checkLogged';
+import { BuyNftModule } from './add-and-sell/buy-nft/buy-nft.module';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -42,7 +43,8 @@ export function getAuthServiceConfigs() {
     SellNFTModule,
     ListarNFTModule,
     SocialLoginModule,
-    FormsModule
+    FormsModule,
+    BuyNftModule
   ],
   providers: [{
     provide: AuthServiceConfig,
@@ -50,8 +52,5 @@ export function getAuthServiceConfigs() {
   }
   ],
   bootstrap: [AppComponent]
-
-  
-
 })
 export class AppModule { }

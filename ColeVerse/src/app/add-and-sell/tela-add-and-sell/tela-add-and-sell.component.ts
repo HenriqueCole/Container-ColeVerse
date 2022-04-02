@@ -52,6 +52,11 @@ export class TelaAddAndSellComponent implements OnInit {
     })
       this.router.navigate(['/vendernft'])
   }
+
+  irParaBuy(){
+    this.router.navigate(['/buynft'])
+  }
+
 }
 
 interface Person{

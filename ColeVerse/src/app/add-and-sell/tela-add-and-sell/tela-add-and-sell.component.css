@@ -98,13 +98,13 @@ body{
     border: none;
     height: 60px;
     width: 200px;
-    background-color: #fa2222;
+    background-color: #c72900;
     font-size: 18px;
     font-weight: 600;
     border-radius: 10px;
     color: white;
     cursor: pointer;
-    background-image: linear-gradient(#da412c , #d64622 );
+    background-image: linear-gradient(#ca3e1c , #c73d1b );
     background-repeat: no-repeat;
     background-size: 0% 100%;
     background-position-x: right;
@@ -200,5 +200,37 @@ body{
 }
 .sell:hover::after,
 .sell:focus::after {
+  opacity: 1;
+}
+
+.buy{
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    border: #aa2200 0.125em solid;
+    border-radius: 0.25em;
+    box-shadow: inset 0 0 0.5em 0 #a72100, 0 0 0.5em 0 #b62703;
+    position: relative;
+}
+
+.buy::before{
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: #c92800;
+    top: 110%;
+    left: 48px;
+    width: 50%;
+    height: 50%;
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+}
+.buy:hover::before,
+.buy:focus::before {
+  opacity: 1;
+}
+.buy:hover::after,
+.buy:focus::after {
   opacity: 1;
 }
