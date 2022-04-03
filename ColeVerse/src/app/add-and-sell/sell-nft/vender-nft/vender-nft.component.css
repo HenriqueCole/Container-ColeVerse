@@ -63,7 +63,7 @@ h2{
 
 img{
     height: 340px;
-    width: 340px;
+    width: 317px;
     border-radius: 6px;
     margin: -60px 0px 0px 0px;
 }
@@ -388,5 +388,43 @@ label:hover{
     color: #20ab20;
     position: absolute;
     margin: 120px 0px 0px 0px;
+}
+
+.produto{
+    display: flex;
+    justify-content: grid;
+    margin: 0px 0px 15px 10px;
+    align-items: center;
+    border: 2px solid #2d1c1c;
+    width: 44vh;
+    height: 405px;
+    border-radius: 17px;
+    position: relative;
+}
+.produto:hover{
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.2);
+    transform: translateY(-6px);
+    box-shadow: #040303 0px 1px 3px 1px;
+}
+.produtoinfos{
+    position: absolute;
+    bottom: 9px;
+    left: 3%;
+    font-size: 20px;
+    color: white;
+}
+
+.containerProdutos{
+    flex-wrap: wrap;
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+}
+.dadosInputs{
+    position: absolute;
+    bottom: 9px;
+    left: 3%;
+    font-size: 20px;
+    color: white;
 }
 
