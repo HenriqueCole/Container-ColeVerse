@@ -49,6 +49,29 @@ body{
     background-color: #ff0000;
 }
 
+.containerReload{
+    display: flex;
+    justify-content: end;
+}
+
+.reload{
+    position: absolute;
+    border: none;
+    margin: 12px 95px 0px 0px;
+    height: 38px;
+    width: 70px;
+    background-color: #11b5e7;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 6px;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.reload:hover{
+    background-color: #83d2eb;
+}
+
 h2{
     justify-content: center;
     display: flex;

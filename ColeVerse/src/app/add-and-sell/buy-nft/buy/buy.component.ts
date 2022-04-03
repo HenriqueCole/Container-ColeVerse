@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import swal from 'sweetalert';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { d } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-buy',
@@ -26,7 +27,7 @@ export class BuyComponent implements OnInit {
   images = [
 
   ]
-  
+
   ngOnInit() {
     console.log(this.idPessoa);
     fetch('/api/buscar_nft',
@@ -40,26 +41,6 @@ export class BuyComponent implements OnInit {
       console.log("essa é a lista nft --> " , this.listaNFT)
     }
     ).catch(function (erro) { console.log(erro); })
-    
-    fetch('/api/inserir_nft',
-      {
-        method: 'POST',
-        body: JSON.stringify({
-          nome: this.name,
-          image: this.imageURL,
-          price: this.price
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
-    ).then(function (result) {
-      return result.json();
-    }).then(function (dados) {
-      console.log(dados);
-    }).catch(function (erro) {
-      console.log(erro);
-    })
   }
 
   
