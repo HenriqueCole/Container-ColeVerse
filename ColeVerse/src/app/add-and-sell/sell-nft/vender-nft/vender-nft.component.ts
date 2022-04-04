@@ -19,7 +19,7 @@ export class VenderNFTComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.idPessoa);
-    fetch('/api/buscar_nft',
+    fetch('/api/buscar_nftSell',
     {
       method: 'POST', headers: { 'Content-Type': 'application/json' }
     }).then(function (result) {
@@ -27,7 +27,7 @@ export class VenderNFTComponent implements OnInit {
     }).then((dados) => {
       console.log(dados)
       this.listaNFT = dados.list;
-      console.log("essa é a lista nft --> " , this.listaNFT)
+      console.log("essa é a lista nftSELL --> " , this.listaNFT)
     }
     ).catch(function (erro) { console.log(erro); })
   }
@@ -63,7 +63,7 @@ export class VenderNFTComponent implements OnInit {
   salvaInt
 
   clickBotao() {
-    fetch('/api/inserir_nft',
+    fetch('/api/inserir_nftSell',
       {
         method: 'POST',
         body: JSON.stringify({
@@ -82,8 +82,8 @@ export class VenderNFTComponent implements OnInit {
     }).catch(function (erro) {
       console.log(erro);
     })
-    console.log("Salva int: ", this.salvaInt)
-    console.log("Valor: ", this.valorBalanca);
+    console.log("Salva int SELL: ", this.salvaInt)
+    console.log("Valor SELL: ", this.valorBalanca);
     fetch('/api/NFT',
       {
         method: 'POST',

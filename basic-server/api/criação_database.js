@@ -29,11 +29,12 @@ database(`CREATE TABLE IF NOT EXISTS NFT (
     ID INTEGER PRIMARY KEY AUTOINCREMENT,
     image varchar(99999999999999999),
     price varchar(45),
-    nome varchar(45)
+    nome varchar(45),
+    IDUSUARIO INTEGER
     )`).then(result => {
-    console.log('TABELA NFT EDITADA CRIADA!');
+    console.log('TABELA NFT CRIADA!');
 }).catch(erro => {
-    console.log('TABELA NFT EDITADA DEU ERRO!');
+    console.log('TABELA NFT DEU ERRO!');
 });
 
 database(`CREATE TABLE IF NOT EXISTS VENDEDOR (
@@ -51,3 +52,14 @@ database(`INSERT INTO VENDEDOR VALUES (999)`).then(result => {
     console.log('INSERT VENDEDOR NÃO CRIADO DEU ERRO AI MANO');
 });
 
+
+database(`CREATE TABLE IF NOT EXISTS NFTSell (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    image varchar(99999999999999999),
+    price varchar(45),
+    nome varchar(45)
+    )`).then(result => {
+    console.log('TABELA NFTSell CRIADA!');
+}).catch(erro => {
+    console.log('TABELA NFTSell DEU ERRO!');
+});

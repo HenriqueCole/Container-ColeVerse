@@ -30,7 +30,7 @@ export class BuyComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.idPessoa);
-    fetch('/api/buscar_nft',
+    fetch('/api/buscar_nftSell',
     {
       method: 'POST', headers: { 'Content-Type': 'application/json' }
     }).then(function (result) {
@@ -38,7 +38,7 @@ export class BuyComponent implements OnInit {
     }).then((dados) => {
       console.log(dados)
       this.listaNFT = dados.list;
-      console.log("essa é a lista nft --> " , this.listaNFT)
+      console.log("essa é a lista nft SELL --> " , this.listaNFT)
     }
     ).catch(function (erro) { console.log(erro); })
   }
@@ -56,7 +56,7 @@ export class BuyComponent implements OnInit {
       this.img64 = reader.result;    
     };
   }
-  
+  img64 = undefined;
 
   voltar(){
     this.router.navigate(['/telaAddAndSell'])

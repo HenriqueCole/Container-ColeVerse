@@ -15,20 +15,31 @@ export class ListaSuaNFTComponent implements OnInit {
     private usuarioService: UsuarioService
   ) { }
 
-  idPessoa = localStorage.getItem('IDUSER');
+  idPessoa = localStorage.getItem('IdUSER');
 
 
   ngOnInit() {
-    console.log(this.idPessoa);
+    
+    console.log("GETITEM:",localStorage.getItem("ID"))
+    console.log("ID pessoa: ", this.idPessoa);
     fetch('/api/buscar_nft',
     {
       method: 'POST', headers: { 'Content-Type': 'application/json' }
     }).then(function (result) {
       return result.json();
     }).then((dados) => {
-      console.log(dados)
-      this.listaNFT = dados.list;
-      console.log("essa é a lista nft --> " , this.listaNFT)
+      let listaDados = [dados.list];
+      console.log("Dados da NFT:",dados.list)
+      console.log("LOCALSTT", localStorage.getItem("IdUSER"))
+      for (let i = 0; i < listaDados.length; i++){
+        if (dados.list[i].ID == localStorage.getItem("IdUSER")){
+          console.log("NFTS:",dados)
+          this.listaNFT[i] = dados.list[i];
+          console.log("LISTA NFT:" , this.listaNFT)
+        }
+      }
+      
+      
     }
     ).catch(function (erro) { console.log(erro); })
   }
@@ -84,7 +95,8 @@ export class ListaSuaNFTComponent implements OnInit {
         body: JSON.stringify({
           nome: this.name,
           image: this.imageURL,
-          price: this.price
+          price: this.price,
+          userID: localStorage.getItem("IdUSER")
         }),
         headers: {
           'Content-Type': 'application/json'

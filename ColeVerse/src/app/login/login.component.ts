@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    
     this.usuarioService.buscarUsuarios()
       .then(resultado => {
         console.log('RESULTADO:', resultado)
@@ -51,10 +50,12 @@ export class LoginComponent implements OnInit {
 
   goToAddSell() {
     this.usuarioService.buscarLogin(this.user, this.password, this.id).then(resultado => {
+      let id = resultado[0].ID
+      console.log("ID DO USUARIO LOGADO:",id)
       if(resultado != ""){
         localStorage.setItem("USER", this.user)
         localStorage.setItem("PASSWORD", this.password)
-        localStorage.setItem("ID", this.id)
+        localStorage.setItem("IdUSER", id)
         swal("Login success!", "", "success");
         setTimeout(() => {
           this.router.navigate(['/telaAddAndSell'])
