@@ -19,23 +19,16 @@ export class ListaSuaNFTComponent implements OnInit {
 
 
   ngOnInit() {
-    
-    console.log("GETITEM:",localStorage.getItem("ID"))
-    console.log("ID pessoa: ", this.idPessoa);
     fetch('/api/buscar_nft',
     {
       method: 'POST', headers: { 'Content-Type': 'application/json' }
     }).then(function (result) {
       return result.json();
     }).then((dados) => {
-      let listaDados = [dados.list];
-      console.log("Dados da NFT:",dados.list)
-      console.log("LOCALSTT", localStorage.getItem("IdUSER"))
+      let listaDados = [dados.list[0]];
       for (let i = 0; i < listaDados.length; i++){
-        if (dados.list[i].ID == localStorage.getItem("IdUSER")){
-          console.log("NFTS:",dados)
-          this.listaNFT[i] = dados.list[i];
-          console.log("LISTA NFT:" , this.listaNFT)
+        if (listaDados[i].IDUSUARIO == localStorage.getItem("IdUSER")){
+          this.listaNFT[i] = listaDados[i];
         }
       }
       
