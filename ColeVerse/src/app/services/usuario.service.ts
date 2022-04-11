@@ -6,7 +6,23 @@ import { Injectable } from '@angular/core';
 export class UsuarioService {
 
   constructor() { }
-  
+
+  buscarNFT(userID) {
+    return new Promise((resolve , rejeitado) =>{
+  fetch('/api/buscar_nft',
+    {
+      method: 'POST', 
+      body: JSON.stringify({
+        userID
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    }).then(resultado => resultado.json())
+    .then(resolvido => resolve(resolvido))
+    .catch(rejeitado);
+  })
+}
 
   buscarUsuarios() { 
     return new Promise((resolvido , rejeitado) =>{

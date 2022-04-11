@@ -14,9 +14,9 @@ inserirRota('/inserir_nft',
 
     
     inserirRota('/buscar_nft', function (dados, resposta){
-        database(`SELECT * FROM NFT`).then(result => {
+        database(`SELECT * FROM NFT WHERE IDUSUARIO = "${dados.userID}"`).then(result => {
             console.log('PRODUTO BUSCADO COM SUCESSO')
-            resposta({ list: result})
+            resposta(result)
         }).catch(erro => {
             console.log('PRODUTO NÃO BUSCADO')
             resposta({erro: 'Erro ao BUSCAR o produto!'})

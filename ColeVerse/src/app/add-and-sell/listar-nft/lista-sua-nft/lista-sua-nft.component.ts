@@ -17,31 +17,22 @@ export class ListaSuaNFTComponent implements OnInit {
 
   idPessoa = localStorage.getItem('IdUSER');
 
-
+  listaNFT = []
+  objeto = {}
   ngOnInit() {
-    fetch('/api/buscar_nft',
-    {
-      method: 'POST', headers: { 'Content-Type': 'application/json' }
-    }).then(function (result) {
-      return result.json();
-    }).then((dados) => {
-      let listaDados = [dados.list[0]];
-      for (let i = 0; i < listaDados.length; i++){
-        if (listaDados[i].IDUSUARIO == localStorage.getItem("IdUSER")){
-          this.listaNFT[i] = listaDados[i];
-        }
+    this.usuarioService.buscarNFT(localStorage.getItem('IdUSER')).then((resultado: any) =>{
+      if (resultado.length != 0){
+        resultado.forEach(element => {
+          this.listaNFT.push(element);
+        });
       }
-      
-      
-    }
-    ).catch(function (erro) { console.log(erro); })
+      console.log("LISTAA:",this.listaNFT)
+    })
   }
-
 
   imageURL
   teste = 0;
   openModal;
-  listaNFT = []
 
   
   images = [
@@ -56,9 +47,6 @@ export class ListaSuaNFTComponent implements OnInit {
     this.teste = 1
     file.readAsDataURL(event.target.files[0])
   }
-
-
-
 
   abrirModal() {
     this.openModal = 1
