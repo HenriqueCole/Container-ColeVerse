@@ -18,18 +18,15 @@ export class VenderNFTComponent implements OnInit {
   idPessoa = localStorage.getItem('IDUSER');
 
   ngOnInit() {
-    console.log(this.idPessoa);
-    fetch('/api/buscar_nftSell',
-    {
-      method: 'POST', headers: { 'Content-Type': 'application/json' }
-    }).then(function (result) {
-      return result.json();
-    }).then((dados) => {
-      console.log(dados)
-      this.listaNFT = dados.list;
-      console.log("essa é a lista nftSELL --> " , this.listaNFT)
-    }
-    ).catch(function (erro) { console.log(erro); })
+    this.usuarioService.buscarNFTSELL(localStorage.getItem('IdUSER')).then((resultado: any) =>{
+      if (resultado.length != 0){
+        resultado.forEach(element => {
+          this.listaNFT.push(element);
+        });
+      }
+      console.log("LISTAA:",this.listaNFT)
+      console.log("REUSLTAOD", resultado)
+    })
   }
   
   imageURL
@@ -63,32 +60,16 @@ export class VenderNFTComponent implements OnInit {
   salvaInt
 
   clickBotao() {
+    // this.usuarioService.inserirNFT(this.name, this.imageURL, this.price);
+
     fetch('/api/inserir_nftSell',
       {
         method: 'POST',
         body: JSON.stringify({
           nome: this.name,
           image: this.imageURL,
-          price: this.price
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
-    ).then(function (result) {
-      return result.json();
-    }).then(function (dados) {
-      console.log(dados);
-    }).catch(function (erro) {
-      console.log(erro);
-    })
-    console.log("Salva int SELL: ", this.salvaInt)
-    console.log("Valor SELL: ", this.valorBalanca);
-    fetch('/api/NFT',
-      {
-        method: 'POST',
-        body: JSON.stringify({
-          img: this.img64
+          price: this.price,
+          userID: localStorage.getItem("IdUSER")
         }),
         headers: {
           'Content-Type': 'application/json'
@@ -105,12 +86,13 @@ export class VenderNFTComponent implements OnInit {
     this.images.push(this.imageURL);
     this.cont++;
     this.contArr.push(this.cont);
-    console.log(this.contArr[this.cont - 1]);
-    console.log(this.contArr[this.cont - 2]);
+    console.log("CONTAINER NFT: ",this.contArr[this.cont - 1]);
+    console.log("OUTRO CONTAINER NFT: ",this.contArr[this.cont - 2]);
     this.teste == 0;
     var item = document.createElement('li');
     var image = document.createElement('img');
     image.src = this.images[this.cont];
+    console.log("LI: ",item)
     image.id = 'imagemSalva'
     this.openModal = 2;
 
@@ -122,16 +104,12 @@ export class VenderNFTComponent implements OnInit {
     setTimeout(() => {
       this.saidaDosInputs = 1;
       this.salvarDados.push({ name: this.name, price: this.price, imageURL: this.imageURL })
-      this.valorBalanca = 0;
-      for(let i = 0; i < this.salvarDados.length; i ++){
-        this.salvaInt = Number(this.salvarDados[i].price);
-        this.valorBalanca = Number(this.valorBalanca + this.salvaInt)
-        this.salvaInt = 0;
-      }
     }, 0);
     setTimeout(() => {
       document.location.reload();
     }, 0);
+    
+
   }
 
   salvarDados = []

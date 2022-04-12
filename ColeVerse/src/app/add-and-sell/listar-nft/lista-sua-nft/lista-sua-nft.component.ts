@@ -35,9 +35,7 @@ export class ListaSuaNFTComponent implements OnInit {
   openModal;
 
   
-  images = [
-
-  ]
+  images = []
 
   mostrarImagem(event) {
     const file = new FileReader

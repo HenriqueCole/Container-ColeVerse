@@ -24,6 +24,37 @@ export class UsuarioService {
   })
 }
 
+buscarNFTSELL(userID) {
+  return new Promise((resolve , rejeitado) =>{
+fetch('/api/buscar_nftSell',
+  {
+    method: 'POST', 
+    body: JSON.stringify({
+      userID
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  }).then(resultado => resultado.json())
+  .then(resolvido => resolve(resolvido))
+  .catch(rejeitado);
+})
+}
+
+buscarNFTBUY() {
+  return new Promise((resolve , rejeitado) =>{
+fetch('/api/buscar_nftBuy',
+  {
+    method: 'POST', 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  }).then(resultado => resultado.json())
+  .then(resolvido => resolve(resolvido))
+  .catch(rejeitado);
+})
+}
+
   buscarUsuarios() { 
     return new Promise((resolvido , rejeitado) =>{
       fetch('/api/buscar_usuario', {

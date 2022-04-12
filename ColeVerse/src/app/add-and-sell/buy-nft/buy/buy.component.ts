@@ -29,18 +29,13 @@ export class BuyComponent implements OnInit {
   ]
 
   ngOnInit() {
-    console.log(this.idPessoa);
-    fetch('/api/buscar_nftSell',
-    {
-      method: 'POST', headers: { 'Content-Type': 'application/json' }
-    }).then(function (result) {
-      return result.json();
-    }).then((dados) => {
-      console.log(dados)
-      this.listaNFT = dados.list;
-      console.log("essa é a lista nft SELL --> " , this.listaNFT)
-    }
-    ).catch(function (erro) { console.log(erro); })
+    this.usuarioService.buscarNFTBUY().then((resultado: any) =>{
+      if (resultado.length != 0){
+        resultado.forEach(element => {
+          this.listaNFT.push(element);
+        });
+      }
+    })
   }
 
   

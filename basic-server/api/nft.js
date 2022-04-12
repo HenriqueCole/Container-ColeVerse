@@ -29,7 +29,7 @@ inserirRota('/inserir_nft',
 inserirRota('/inserir_nftSell',
     function inserir(dados, resposta) {
         console.log(dados)
-        database(`INSERT INTO NFTSell (nome,image,price) VALUES("${dados.nome}","${dados.image}", "${dados.price}")`)
+        database(`INSERT INTO NFTSell (nome,image,price,IDUSUARIOVENDEDOR) VALUES("${dados.nome}","${dados.image}", "${dados.price}", "${dados.userID}")`)
     .then(result => {
     console.log('NFTSell inserido com sucesso!')
     resposta({ message: 'NFTSell inserido com sucesso' })
@@ -41,11 +41,21 @@ inserirRota('/inserir_nftSell',
     })
 
     inserirRota('/buscar_nftSell', function (dados, resposta){
-        database(`SELECT * FROM NFTSell`).then(result => {
-            console.log('PRODUTO SELL BUSCADO COM SUCESSO')
-            resposta({ list: result})
+        database(`SELECT * FROM NFTSell WHERE IDUSUARIOVENDEDOR = "${dados.userID}"`).then(result => {
+            console.log('NFT SELL BUSCADO COM SUCESSO')
+            resposta(result)
         }).catch(erro => {
-            console.log('PRODUTO NÃO BUSCADO')
-            resposta({erro: 'Erro ao BUSCAR o produto SELL!'})
+            console.log('NFT SELL NÃO BUSCADO')
+            resposta({erro: 'Erro ao BUSCAR o produto!'})
         });
-});
+    });
+
+    inserirRota('/buscar_nftBuy', function (dados, resposta){
+        database(`SELECT * FROM NFTSell`).then(result => {
+            console.log('NFT Buy BUSCADO COM SUCESSO')
+            resposta(result)
+        }).catch(erro => {
+            console.log('NFT Buy NÃO BUSCADO')
+            resposta({erro: 'Erro ao BUSCAR Buy o produto!'})
+        });
+    });

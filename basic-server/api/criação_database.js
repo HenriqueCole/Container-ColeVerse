@@ -57,7 +57,8 @@ database(`CREATE TABLE IF NOT EXISTS NFTSell (
     ID INTEGER PRIMARY KEY AUTOINCREMENT,
     image varchar(99999999999999999),
     price varchar(45),
-    nome varchar(45)
+    nome varchar(45),
+    IDUSUARIOVENDEDOR INTEGER
     )`).then(result => {
     console.log('TABELA NFTSell CRIADA!');
 }).catch(erro => {
