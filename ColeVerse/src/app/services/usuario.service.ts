@@ -121,5 +121,22 @@ fetch('/api/buscar_nftBuy',
     })
   }
 
+  removerNFT(ID){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/delete_nft', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            ID
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
 
 }

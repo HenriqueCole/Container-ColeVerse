@@ -376,3 +376,16 @@ label:hover{
     border-radius: 57px;
     cursor: pointer;
 }
+
+.containerEdit{
+    position: absolute;
+    display: flex;
+    justify-content: end;
+}
+
+.edit{
+    color: #c19090;
+    margin: 7px 0px 0px 288px;
+    font-size: 30px;
+    cursor: pointer;
+}

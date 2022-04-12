@@ -59,3 +59,17 @@ inserirRota('/inserir_nftSell',
             resposta({erro: 'Erro ao BUSCAR Buy o produto!'})
         });
     });
+
+
+    inserirRota('/delete_nft',
+function inserir(dados, resposta) {
+    console.log(dados)
+    database(`DELETE FROM NFT WHERE ID = "${dados.ID}"`)
+        .then(result => {
+        resposta({message: 'nft  FOI removido com sucesso"'})
+    }).catch(erro => {
+        console.log('nft NÃO FOI removido com sucesso!')
+        console.log(erro)
+        resposta({message: 'nft NÃO FOI removido com sucesso"'})
+    });
+})

@@ -57,24 +57,13 @@
     </div>
   </div>
   </div>
-  
-  <div id="SavedNFT">
-    <div *ngIf="saidaDosInputs == 1" class="saidaInputs">
-      <div class="ladoALado">
-        <div *ngFor="let person of salvarDados, let i = index" class="container {{contArr[i]}}">
-          <img [src]="person.imageURL" alt="">
-          <div class="dadosInputs">
-          <p> Name: {{ person.name }}</p>
-          <p> Price: {{ person.price }}</p>
-        </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="containerProdutos">
-    <div class="produto" *ngFor="let item of listaNFT">
+    <div *ngFor="let item of listaNFT, let i = index" class="produto" >
       <img id="imgproduto" [src]=item.image alt="">
       <div class="produtoinfos">
+        <div class="containerEdit">
+          <div class="edit" (click)="editNFT(i)">︙</div>
+        </div>
         <div class="produtoname">Name:  {{item.nome}}</div>
         <div class="produtodesc">Price:  {{item.price}}</div>
       </div>

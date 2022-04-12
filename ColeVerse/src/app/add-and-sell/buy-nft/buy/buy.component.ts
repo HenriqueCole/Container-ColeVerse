@@ -59,11 +59,8 @@ export class BuyComponent implements OnInit {
 
 
   comprarNFT(){
-    // if (dinheiro >= valorNFT){
-    //   swal("Success!", "You bought this NFT!", "success");
-    // } else if (dinheiro < valorNFT){
-    //   swal("Error!", "You don't have enough money!", "error");
-    // }
+      swal("Success!", "You bought this NFT!", "success");
+
   }
 
 }

@@ -126,18 +126,20 @@ export class ListaSuaNFTComponent implements OnInit {
   contArr = [];
   cont = 0;
 
-  editNFT() {
+  editNFT(indice) {
+    
+    console.log(indice)
     swal("Configuration of your NFT!", {
       buttons: ["Remove", true],
     })
     .then((value) => {
       switch (value) {
         case "catch":
+          // this.usuarioService.removerNFT(indice+1)
           swal("NFT removed!", "", "success");
           break;
       }
     });
-
   }
 
   img64 = undefined;
