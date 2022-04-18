@@ -460,3 +460,13 @@ label:hover{
     color: rgb(0, 0, 0);
     background-color: #e4dfec;
 }
+
+.containerBuy{
+    position: absolute;
+    display: flex;
+    justify-content: end;
+}
+
+.BUY{
+    margin: -33px 0px 0px 238px;
+}

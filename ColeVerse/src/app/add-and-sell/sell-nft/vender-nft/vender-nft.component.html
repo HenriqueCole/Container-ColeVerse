@@ -2,7 +2,6 @@
 
 <body>
   <button class="voltarAddAndSell" (click)="router.navigate(['/telaAddAndSell'])">BACK</button>
-
   <div class="containerLogo">
     <div class="cole">Cole</div>
     <div class="verse">Verse</div>
@@ -15,7 +14,6 @@
   <div *ngIf="openModal == 1" class="rodar">
     <div id="containerModal">
       <div class="modal">
-
         <div class="inputs">
           <h2 class="itemName">Item name</h2>
           <input [(ngModel)]="name" type="text" class="name">
@@ -29,30 +27,13 @@
           <form action="">
             <div>
               <i *ngIf="teste != 1" class="fas fa-image"></i>
-
               <label *ngIf="teste == 0" for="arquivo">Upload NFT</label>
-
               <input *ngIf="teste !=1" type="file" name="arquivo" id="arquivo" (change)="mostrarImagem($event)">
-
             </div>
           </form>
           <br />
         </div>
-
         <button *ngIf="teste == 1" class="sendNFT" (click)="clickBotao()">Sell</button>
-      </div>
-    </div>
-  </div>
-  <div id="SavedNFT">
-    <div *ngIf="saidaDosInputs == 1" class="saidaInputs">
-      <div class="ladoALado">
-        <div *ngFor="let person of salvarDados, let i = index" class="container {{contArr[i]}}">
-          <img [src]="person.imageURL" alt="">
-          <div class="dadosInputs">
-          <p> Name: {{ person.name }}</p>
-          <p> Price: {{ person.price }}</p>
-        </div>
-        </div>
       </div>
     </div>
   </div>
@@ -60,6 +41,9 @@
     <div class="produto" *ngFor="let item of listaNFT">
       <img id="imgproduto" [src]=item.image alt="">
       <div class="produtoinfos">
+        <div class="containerEdit">
+          <div class="edit" (click)="editNFT(item.ID)">︙</div>
+        </div>
         <div class="produtoname">Name:  {{item.nome}}</div>
         <div class="produtodesc">Price:  {{item.price}}</div>
       </div>

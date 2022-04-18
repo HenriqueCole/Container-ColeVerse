@@ -57,10 +57,17 @@ export class BuyComponent implements OnInit {
     this.router.navigate(['/telaAddAndSell'])
   }
 
+  name = ""
+  price = ""
 
-  comprarNFT(){
-      swal("Success!", "You bought this NFT!", "success");
-
-  }
-
+  comprarNFT(indice){
+    console.log(indice)
+    swal("You bought your NFT!", {
+      icon: "success",
+    });
+      this.usuarioService.removerNFTSell(indice)
+      setTimeout(() => {
+        document.location.reload();
+      }, 650);
+}
 }

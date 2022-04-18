@@ -428,3 +428,10 @@ label:hover{
     color: white;
 }
 
+.edit{
+    color: #c19090;
+    margin: 7px 0px -43px 288px;
+    font-size: 30px;
+    cursor: pointer;
+}
+

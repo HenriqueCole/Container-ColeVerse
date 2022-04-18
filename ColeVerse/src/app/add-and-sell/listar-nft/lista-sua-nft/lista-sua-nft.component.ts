@@ -26,7 +26,7 @@ export class ListaSuaNFTComponent implements OnInit {
           this.listaNFT.push(element);
         });
       }
-      console.log("LISTAA:",this.listaNFT)
+      console.log("LISTA NFTs:",this.listaNFT)
     })
   }
 

@@ -70,3 +70,16 @@ function inserir(dados, resposta) {
         resposta({message: 'nft NÃO FOI removido com sucesso"'})
     });
 })
+
+inserirRota('/delete_nftSell',
+function inserir(dados, resposta) {
+    console.log(dados)
+    database(`DELETE FROM NFTSell WHERE ID = "${dados.ID}"`)
+        .then(result => {
+        resposta({message: 'nft  FOI removido com sucesso"'})
+    }).catch(erro => {
+        console.log('nft NÃO FOI removido com sucesso!')
+        console.log(erro)
+        resposta({message: 'nft NÃO FOI removido com sucesso"'})
+    });
+})

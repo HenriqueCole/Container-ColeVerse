@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert';
+import swal from 'sweetalert';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -24,8 +24,7 @@ export class VenderNFTComponent implements OnInit {
           this.listaNFT.push(element);
         });
       }
-      console.log("LISTAA:",this.listaNFT)
-      console.log("REUSLTAOD", resultado)
+      console.log("LISTA NFTs:",this.listaNFT)
     })
   }
   
@@ -60,7 +59,6 @@ export class VenderNFTComponent implements OnInit {
   salvaInt
 
   clickBotao() {
-    // this.usuarioService.inserirNFT(this.name, this.imageURL, this.price);
 
     fetch('/api/inserir_nftSell',
       {
@@ -86,13 +84,10 @@ export class VenderNFTComponent implements OnInit {
     this.images.push(this.imageURL);
     this.cont++;
     this.contArr.push(this.cont);
-    console.log("CONTAINER NFT: ",this.contArr[this.cont - 1]);
-    console.log("OUTRO CONTAINER NFT: ",this.contArr[this.cont - 2]);
     this.teste == 0;
     var item = document.createElement('li');
     var image = document.createElement('img');
     image.src = this.images[this.cont];
-    console.log("LI: ",item)
     image.id = 'imagemSalva'
     this.openModal = 2;
 
@@ -129,4 +124,26 @@ export class VenderNFTComponent implements OnInit {
       console.log('Error: ', error);
     };
   }
+
+  editNFT(indice) {
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover your NFT!",
+      icon: "warning",
+      buttons: "Remove",
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        this.usuarioService.removerNFTSell(indice)
+        swal("You deleted your NFT!", {
+          icon: "success",
+        });
+        setTimeout(() => {
+          document.location.reload();
+        }, 650);
+      }
+    });
+  }
+
 }
