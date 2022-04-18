@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         swal("Login successful!", "Login with Google!", "success");
         setTimeout(() => {
           this.router.navigate(["/telaAddAndSell"])
-        }, 1600);
+        }, 0);
       }
     );
   }
@@ -97,19 +97,3 @@ export class LoginComponent implements OnInit {
     NOME: String;
     PASSWORD: String;
   }
-    
-  
-  // loginMeta() {
-  //     if (ethereum && ethereum.isConnected()) {
-  //       window.ethereum.request({ method: 'eth_requestAccounts' }).then(result => {
-  //         console.log(result);
-  //       })
-  //     } else {
-  //       alert('É necessário instalar a extensão do metamask')
-  //     }
-  //   }
-  
-  // window.ethereum.request({method: 'eth_requestAccounts'}).then(result => {
-  //   console.log(result[0])};
-  
-
