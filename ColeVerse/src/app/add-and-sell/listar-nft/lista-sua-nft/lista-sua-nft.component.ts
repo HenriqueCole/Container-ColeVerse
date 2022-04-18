@@ -66,7 +66,6 @@ export class ListaSuaNFTComponent implements OnInit {
   }
 
   clickBotao() {
-    // this.usuarioService.inserirNFT(this.name, this.imageURL, this.price);
 
     fetch('/api/inserir_nft',
       {
@@ -126,7 +125,7 @@ export class ListaSuaNFTComponent implements OnInit {
   contArr = [];
   cont = 0;
 
-  editNFT(indice) {
+  editNFT(indice, nome, price) {
     swal({
       title: "Are you sure?",
       text: "Once deleted, you will not be able to recover your NFT!",
@@ -137,6 +136,7 @@ export class ListaSuaNFTComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete) {
         this.usuarioService.removerNFT(indice)
+        this.usuarioService.inserirNFTRemoved(indice, price, nome)
         swal("You deleted your NFT!", {
           icon: "success",
         });

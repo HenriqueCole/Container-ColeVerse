@@ -54,3 +54,23 @@ database(`CREATE TABLE IF NOT EXISTS NFTSell (
 }).catch(erro => {
     console.log('TABELA NFTSell DEU ERRO!');
 });
+
+database(`CREATE TABLE IF NOT EXISTS NFTsRemoved (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    price varchar(45),
+    nome varchar(45)
+    )`).then(result => {
+    console.log('TABELA NFT REMOVED CRIADA!');
+}).catch(erro => {
+    console.log('TABELA NFT REMOVED DEU ERRO!');
+});
+
+database(`CREATE TABLE IF NOT EXISTS NFTsRemovedSell (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    price varchar(45),
+    nome varchar(45)
+    )`).then(result => {
+    console.log('TABELA NFT REMOVED SELL CRIADA!');
+}).catch(erro => {
+    console.log('TABELA NFT REMOVED SELL DEU ERRO!');
+});

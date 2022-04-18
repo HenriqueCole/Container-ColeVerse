@@ -83,3 +83,32 @@ function inserir(dados, resposta) {
         resposta({message: 'nft NÃO FOI removido com sucesso"'})
     });
 })
+
+
+inserirRota('/inserir_nftRemoved',
+    function inserir(dados, resposta) {
+        console.log(dados)
+        database(`INSERT INTO NFTsRemoved (ID,price,nome) VALUES("${dados.ID}","${dados.price}", "${dados.nome}")`)
+    .then(result => {
+    console.log('NFTSell inserido com sucesso!')
+    resposta({ message: 'NFTSell inserido com sucesso' })
+     }).catch(erro => {
+    console.log('NFTSell NÃO FOI inserido com sucesso!')
+    console.log(erro)
+    resposta({ message: 'NFTSell NÃO FOI inserido com sucesso"' })
+            });
+    })
+
+    inserirRota('/inserir_nftRemovedSell',
+    function inserir(dados, resposta) {
+        console.log(dados)
+        database(`INSERT INTO NFTsRemoved (ID,price,nome) VALUES("${dados.ID}","${dados.price}", "${dados.nome}")`)
+    .then(result => {
+    console.log('NFTSell inserido com sucesso!')
+    resposta({ message: 'NFTSell inserido com sucesso' })
+     }).catch(erro => {
+    console.log('NFTSell NÃO FOI inserido com sucesso!')
+    console.log(erro)
+    resposta({ message: 'NFTSell NÃO FOI inserido com sucesso"' })
+            });
+    })

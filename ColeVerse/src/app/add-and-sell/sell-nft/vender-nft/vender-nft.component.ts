@@ -125,7 +125,7 @@ export class VenderNFTComponent implements OnInit {
     };
   }
 
-  editNFT(indice) {
+  editNFT(indice, nome, price) {
     swal({
       title: "Are you sure?",
       text: "Once deleted, you will not be able to recover your NFT!",
@@ -136,6 +136,7 @@ export class VenderNFTComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete) {
         this.usuarioService.removerNFTSell(indice)
+        this.usuarioService.inserir_nftRemovedSell(indice, price, nome)
         swal("You deleted your NFT!", {
           icon: "success",
         });

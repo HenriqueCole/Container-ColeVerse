@@ -157,4 +157,54 @@ fetch('/api/buscar_nftBuy',
     })
   }
 
+
+  inserirNFTRemoved(ID, price, nome){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/inserir_nftRemoved', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            ID,
+            price,
+            nome
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
+    })
+  }
+
+  inserir_nftRemovedSell(ID, price, nome){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/inserir_nftRemoved', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            ID,
+            price,
+            nome
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
+    })
+  }
+
 }
+
