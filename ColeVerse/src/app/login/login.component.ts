@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   password = '';
   id = '';
 
-
+  
   public socialSignIn(socialPlatform: string) {
     let socialPlatformProvider;
     socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;

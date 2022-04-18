@@ -8,13 +8,6 @@ database(`CREATE TABLE IF NOT EXISTS PERSON (
     console.log('TABELA PERSON DEU ERRO AI MANO');
 });
 
-database(`INSERT INTO PERSON VALUES (null, 'Henrique', '123'), (null, 'Cole', '456')`).then(result => {
-    console.log('INSERT CRIADO! BOA MANO');
-}).catch(erro => {
-    console.log('INSERT NÃO CRIADO DEU ERRO AI MANO');
-});
-
-
 database(`CREATE TABLE IF NOT EXISTS NFT (
     ID INTEGER PRIMARY KEY AUTOINCREMENT,
     image varchar(99999999999999999),
