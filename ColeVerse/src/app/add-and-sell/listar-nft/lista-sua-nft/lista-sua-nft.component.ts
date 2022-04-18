@@ -127,20 +127,24 @@ export class ListaSuaNFTComponent implements OnInit {
   cont = 0;
 
   editNFT(indice) {
-    
-    console.log(indice)
-    swal("Configuration of your NFT!", {
-      buttons: ["Remove", true],
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover your NFT!",
+      icon: "warning",
+      buttons: "Remove",
+      dangerMode: true,
     })
-    .then((value) => {
-      switch (value) {
-        case "catch":
-          // this.usuarioService.removerNFT(indice+1)
-          swal("NFT removed!", "", "success");
-          break;
+    .then((willDelete) => {
+      if (willDelete) {
+        this.usuarioService.removerNFT(indice)
+        swal("You deleted your NFT!", {
+          icon: "success",
+        });
+        setTimeout(() => {
+          document.location.reload();
+        }, 650);
       }
     });
   }
-
   img64 = undefined;
 }

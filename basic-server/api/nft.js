@@ -23,9 +23,6 @@ inserirRota('/inserir_nft',
         });
     });
 
-
-
-
 inserirRota('/inserir_nftSell',
     function inserir(dados, resposta) {
         console.log(dados)
