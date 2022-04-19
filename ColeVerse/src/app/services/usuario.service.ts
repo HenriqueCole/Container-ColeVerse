@@ -7,6 +7,20 @@ export class UsuarioService {
 
   constructor() { }
 
+  buscarPeople(){
+    return new Promise((resolve , rejeitado) =>{
+      fetch('/api/buscar_people',
+        {
+          method: 'POST', 
+          headers: {
+            'Content-Type': 'application/json'
+          },
+        }).then(resultado => resultado.json())
+        .then(resolvido => resolve(resolvido))
+        .catch(rejeitado);
+      })
+  }
+
   buscarNFT(userID) {
     return new Promise((resolve , rejeitado) =>{
   fetch('/api/buscar_nft',
@@ -190,6 +204,28 @@ fetch('/api/buscar_nftBuy',
           {
             ID,
             price,
+            nome
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
+    })
+  }
+
+  inserirContaGoogle(nome){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/inserir_contaGoogle', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
             nome
           }
         ),

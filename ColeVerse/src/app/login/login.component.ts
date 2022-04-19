@@ -32,6 +32,10 @@ export class LoginComponent implements OnInit {
         console.log(socialPlatform + " sign in data : ", userData);
         swal("Login successful!", "Login with Google!", "success");
         setTimeout(() => {
+          this.usuarioService.inserirContaGoogle(userData.name);
+          localStorage.setItem("USER", userData.name)
+          localStorage.setItem("PASSWORD", "0123456789")
+          console.log("Google name:", userData.name)
           this.router.navigate(["/telaAddAndSell"])
         }, 0);
       }

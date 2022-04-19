@@ -17,6 +17,13 @@ export class TelaAddAndSellComponent implements OnInit {
     
     id;
   ngOnInit() {
+        this.usuarioService.buscarPeople()
+        .then((result => {
+          console.log(result);
+        }))
+        .catch((problem) => {
+          console.log(problem);
+        });
         let username = localStorage.getItem("USER")
         let passwd = localStorage.getItem("PASSWORD")
         if (username && passwd){
