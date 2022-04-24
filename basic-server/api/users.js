@@ -47,34 +47,4 @@ inserirRota('/buscarVendedor', function(dados, resposta) {
         });
 })
 
-inserirRota('/inserir_contaGoogle',
-    function inserir(dados, resposta) {
-        console.log(dados)
-        database(`INSERT INTO PERSON (nome,) VALUES("${dados.nome}")`)
-    .then(result => {
-        console.log('PERSON inserido com sucesso!')
-        resposta({ message: 'PERSON inserido com sucesso' })
-    }).catch(erro => {
-        console.log('PERSON NÃO FOI inserido com sucesso!')
-        console.log(erro)
-        resposta({ message: 'PERSON NÃO FOI inserido com sucesso"' })
-    });
-})
-
-inserirRota('/buscar_people',
-    function inserir(dados, resposta) {
-        console.log(dados)
-        database("SELECT * FROM PERSON")
-    .then(result => {
-        resposta(result)
-        console.log('PERSON buscada com sucesso!')
-        resposta({ message: 'PERSON buscada com sucesso' })
-    }).catch(erro => {
-        console.log('PERSON NÃO FOI buscada com sucesso!')
-        console.log(erro)
-        resposta({ message: 'PERSON NÃO FOI buscada com sucesso"' })
-    });
-})
-
-
     
