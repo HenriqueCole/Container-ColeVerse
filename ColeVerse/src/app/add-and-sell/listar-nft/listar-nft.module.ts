@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListaSuaNFTComponent } from './lista-sua-nft/lista-sua-nft.component';
+import { RemoverNFTComponent } from './remover-nft/remover-nft.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import CheckLogged from 'src/app/checkLogged';
@@ -21,6 +22,6 @@ const routes: Routes = [
     FormsModule
   ],
   providers: [CheckLogged],
-  declarations: [ListaSuaNFTComponent]
+  declarations: [ListaSuaNFTComponent, RemoverNFTComponent]
 })
 export class ListarNFTModule { }

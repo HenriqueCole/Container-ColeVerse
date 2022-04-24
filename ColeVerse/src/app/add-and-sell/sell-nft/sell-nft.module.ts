@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { VenderNFTComponent } from './vender-nft/vender-nft.component';
+import { RemoverNFTdaVendaComponent } from './remover-nftda-venda/remover-nftda-venda.component';
 import { FormsModule } from '@angular/forms';
 import CheckLogged from 'src/app/checkLogged';
 
@@ -21,6 +22,6 @@ const routes: Routes = [
     FormsModule
   ],
   providers: [CheckLogged],
-  declarations: [VenderNFTComponent]
+  declarations: [VenderNFTComponent, RemoverNFTdaVendaComponent]
 })
 export class SellNFTModule { }
